@@ -1,0 +1,35 @@
+{
+  "name": "sos-stoll",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Debout, Stoll ! — Médiathèque du patrimoine & plateforme de mobilisation du Collège Stoll d'Akono. Application Next.js bilingue FR/EN.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "extract:legacy": "node scripts/extract-from-legacy.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "11.5.4",
+    "next": "^14.2.35",
+    "next-intl": "3.19.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "optionalDependencies": {
+    "@supabase/supabase-js": "2.45.4",
+    "resend": "4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "eslint": "8.57.0",
+    "eslint-config-next": "^14.2.35",
+    "typescript": "5.5.4"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

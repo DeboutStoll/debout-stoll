@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "title": "Debout, Stoll! — Collège Stoll d'Akono & St Joseph Minor Seminary",
+    "description": "SOS Collège Stoll d'Akono — a heritage in peril. The living memory of one of Cameroon's great schools, and a summons to every Stollois of yesterday, today and tomorrow.",
+    "ogTitle": "SOS Collège Stoll d'Akono — a heritage in peril",
+    "ogDescription": "Fifteen hundred pupils in 2004; fewer than two hundred today. A summons to every son and daughter of Stoll to rescue sixty years of memory, discipline and distinction."
+  },
+  "nav": {
+    "brand": "STOLL · AKONO",
+    "racines": "Roots",
+    "eglise": "The Church",
+    "figures": "Figures",
+    "voix": "The Voice",
+    "films": "Films",
+    "lieux": "Places",
+    "sources": "Sources",
+    "constat": "The Reckoning",
+    "rejoindre": "Answer the Call"
+  },
+  "cta": {
+    "join": "Join the network",
+    "contribute": "Entrust a photograph or a memory"
+  },
+  "hero": {
+    "eyebrow": "Heritage archive · Akono, Cameroon",
+    "title": "One hill,",
+    "titleEm": "three ages of a single work",
+    "lede": "From an Alsatian Spiritan mission to the college raised by Marist Brothers who came from Quebec: the living memory of Collège Stoll d'Akono and of the Saint Joseph Minor Seminary that prepared its ground.",
+    "stat1v": "1919", "stat1l": "Father Stoll arrives",
+    "stat2v": "1963", "stat2l": "The college is founded",
+    "stat3v": "14 ha", "stat3l": "An estate in the forest",
+    "stat4v": "60+", "stat4l": "Years of memory"
+  },
+  "racines": {
+    "num": "I · ROOTS",
+    "title": "Raised upon the seminary's foundations",
+    "intro": "Collège Stoll did not rise from untouched ground. It stands <strong>on the very site once largely occupied by the Akono Minor Seminary</strong> — upon a mission founded by an Alsatian Spiritan and carried forward by Brothers who came from Canada. Three institutions, one patronage, one enduring soil."
+  },
+  "eglise": {
+    "num": "II · THE JEWEL",
+    "title": "The church, from which the whole work sprang",
+    "f1title": "A cathedral deep in the bush",
+    "f1p1": "Raised between 1933 and 1938 to Father Stoll's own designs and under the hand of Brother Alphonse Quémeneur, an engineer, the Church of Our Lady of the Seven Sorrows is reckoned across Cameroon and the wider region <strong>among the noblest monuments in the history of the Catholic faith</strong>. Beaver-tail tiles, brick and timber — the building craft of Alsace, transplanted into the equatorial forest.",
+    "f1p2": "It was this church that gave the place its soul. The painter Atini Charles, whom Brother Lavoie discovered <strong>as he was at work painting the Akono church</strong>, would in time adorn the walls of Collège Stoll itself.",
+    "f1p3": "Here Father Stoll would say, again and again: <em>“The things of God must be handled with reverence.”</em> Those words, incised in the Ewondo tongue, keep watch to this day over the college gate.",
+    "f1cap": "<b>Today.</b> The ochre-and-white façade of Our Lady of the Seven Sorrows. <span style=\"opacity:.7\">© GESCOD / Michel Weyland</span>",
+    "strip1": "<b>1. The builder.</b> Father Stoll on the mission worksite. © Spiritan Archives, Chevilly-Larue.",
+    "strip2": "<b>2. The people of God.</b> The central aisle on a feast day, around 1937.",
+    "strip3": "<b>3. The façade, 1937.</b> Our Lady of the Seven Sorrows on a feast day. © Spiritan Archives.",
+    "f2title": "A child of the hill returns to consecrate it",
+    "f2p1": "The photograph tells the whole story of Akono. The man who inaugurates Collège Stoll on 23 February 1969 — <strong>Mr Paul Biya, Secretary General of the Presidency of the Republic of Cameroon</strong> — had himself been a <strong>pupil of the Saint Joseph Minor Seminary of Akono</strong>, the mother house raised on this same hill. A child formed on this ground returns, now as an envoy of the State, to consecrate the new work that carries the old one forward.",
+    "f2p2": "About the table, the three pillars stand united: the <strong>Cameroonian State</strong>, the <strong>Church</strong> in the person of the Apostolic Nuncio, and the <strong>Canada</strong> of the Marist Brothers in the person of the Ambassador. From seminary to college, the hill of Akono here redeems its every promise.",
+    "f2p3": "Three weeks earlier, Father Stoll himself — invited from his retirement in Alsace — had answered in a letter dated <strong>2 February 1969</strong>, moved that a college should bear his name, “a college of which he had dreamed in his years as parish priest.”",
+    "f2cap": "<b>23 February 1969.</b> Mr Paul Biya — once a pupil of the Akono Minor Seminary — inaugurates Collège Stoll beside the Apostolic Nuncio and the Ambassador of Canada. <span style=\"opacity:.7\">A period colour document — a rare archive.</span>"
+  },
+  "figures": {
+    "num": "III · FIGURES",
+    "title": "A pantheon of founders and masters",
+    "intro": "Seven faces, seven lives spent upon a single work — from the Alsatian Spiritan to the Quebec chronicler, from the founding archbishop to a figure cherished only in living memory, and on to a former pupil who became an artist of worldwide renown. <strong>The pantheon of those who made Stoll — and whom Stoll sent out to shine.</strong>"
+  },
+  "voix": {
+    "num": "IV · THE VOICE OF THE FOUNDERS",
+    "title": "What the chronicle handed down to us",
+    "intro": "The account of Brother Laurent Potvin, an eyewitness to it all, gives this history its flesh and blood. Three passages form its beating heart.",
+    "sosEyebrow": "⚠ SOS Collège Stoll — a heritage in peril",
+    "sosBig": "Fifteen hundred pupils in 2004. Fewer than two hundred today.",
+    "sosP": "A school built for two thousand of the young has been emptying ever since the Marists departed. A heritage does not die of old age — it dies of neglect. What Stoll once formed must now, in turn, carry Stoll.",
+    "sosClose": "Keepers of an inheritance, builders of what comes next — the hour to act is now."
+  },
+  "films": {
+    "num": "V · MOVING IMAGES",
+    "title": "Stoll & Akono, in motion",
+    "intro": "Heritage is not only read; it is watched, alive. These films gather the many gazes cast upon the college, the mission and its estate. <strong>Press ▶ to begin each film.</strong>"
+  },
+  "lieux": {
+    "num": "VI · PLACES",
+    "title": "The estate and its stones",
+    "intro": "Fourteen hectares deep in equatorial forest: the jewel of a church, the two campuses, the boarding houses, a sports complex without equal in the region. Add images here as they are recovered or newly photographed."
+  },
+  "sources": {
+    "num": "VII · SOURCES",
+    "title": "Where the memory may be drawn",
+    "intro": "The archives, collections and films to be sought out in order to complete this record."
+  },
+  "constat": {
+    "num": "VIII · THE RECKONING",
+    "title": "What Stoll possessed — and what it has become",
+    "lead": "This document, filmed on the ground, lays bare the depth of the fall. Collège Stoll was no ordinary school: it was a <strong>self-contained, modern, self-sufficient whole</strong>, at the very edge of its age. Everything was new, tended, supervised, automated. Today, the essential lies <strong>abandoned</strong>.",
+    "chaptersLabel": "Skip to a key moment:",
+    "invLead": "A vast material and human inheritance, now imperilled:",
+    "strike": "All of it once existed, functioned, formed one generation after another. <strong>All of it, today, stands on the edge of oblivion.</strong> That is why the call can wait no longer."
+  },
+  "rejoindre": {
+    "num": "IX · ANSWER THE CALL",
+    "title": "Those whom Stoll formed must now carry Stoll",
+    "lead": "This is no longer a petition; it is a pledge. In joining the alumni network you write your name into the chain that binds the first class to those yet to come. <strong>Every membership counts; every gesture saves a little of the house.</strong>",
+    "statToday2004": "Pupils in 2004",
+    "statTodayNow": "Pupils today",
+    "statSeats": "Places to fill",
+    "statMembers": "Members of the network",
+    "actionsLead": "Two ways to act, this very moment:",
+    "shareLabel": "Carry the call further:",
+    "quote": "“The alumni network of Collège Stoll d'Akono: heirs of one house, keepers of its future.”"
+  },
+  "form": {
+    "title": "Join the alumni network",
+    "hint": "Former pupils, parents and friends alike — of yesterday, today and tomorrow.",
+    "name": "Full name", "namePh": "Your name",
+    "promo": "Class / year", "promoPh": "e.g. 1998",
+    "city": "City / country", "cityPh": "e.g. Douala, Cameroon",
+    "email": "Email", "emailPh": "you@example.com",
+    "message": "Message (optional)", "messagePh": "A word, a memory, a proposal…",
+    "submit": "Answer the call →",
+    "submitting": "Sending…",
+    "note": "Your details serve the alumni network alone. They are never shared with third parties.",
+    "successTitle": "Welcome to the network.",
+    "success": "Your membership is recorded, and a confirmation has been sent to your inbox. Thank you for carrying Stoll with us.",
+    "error": "Something went wrong. Please try again, or write to us at contact@debout-stoll.org.",
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "tooMany": "Too many attempts. Please pause a moment before trying again."
+  },
+  "footer": {
+    "tagline": "The alumni network of Collège Stoll d'Akono: heirs of one house, keepers of its future.",
+    "sig": "Heritage archive · forever a work in progress",
+    "join": "Answer the call",
+    "contribute": "Contribute to the memory",
+    "credits": "Credits & legal notice"
+  },
+  "common": {
+    "backHome": "← Back to home",
+    "language": "Language",
+    "dataLightLabel": "Light mode",
+    "liveMembers": "members to date"
+  },
+  "contribute": {
+    "back": "← Back to home",
+    "title": "Entrust a photograph, a memory, a forgotten figure",
+    "lead": "The memory of Stoll rests in your hands. Every class photograph, every anecdote, every name half-forgotten enriches the pantheon and the gallery. Each contribution is reviewed before it is published.",
+    "name": "Your name", "namePh": "Your name",
+    "email": "Email (so that we may reach you)", "emailPh": "you@example.com",
+    "kind": "Kind of contribution",
+    "kindPhoto": "Photograph / archive document",
+    "kindTestimony": "Testimony / recollection",
+    "kindFigure": "A forgotten figure for the pantheon",
+    "title2": "Title / subject", "title2Ph": "e.g. Class of 1985, end-of-year ceremony",
+    "story": "Your account", "storyPh": "Set down the scene, the people, the year, the place…",
+    "file": "Photograph or document (optional)",
+    "fileHint": "JPG, PNG or PDF — 8 MB maximum.",
+    "consent": "I authorise the publication of this contribution on the site, with a credit to its source.",
+    "submit": "Send my contribution →",
+    "submitting": "Sending…",
+    "successTitle": "Thank you — safely received.",
+    "success": "Your contribution now joins the review queue. We will be in touch should we need to. Thanks to you, the memory grows.",
+    "error": "The submission failed. Please try again, or write to contact@debout-stoll.org.",
+    "consentRequired": "Please tick the box authorising publication.",
+    "note": "Reviewed by hand. Nothing is published without approval. Your details serve the alumni network alone."
+  },
+  "credits": {
+    "back": "← Back to home",
+    "title": "Credits & legal notice",
+    "intro": "This archive is a work of memory, borne by the alumni network of Collège Stoll d'Akono. It gathers documents whose rights belong to their authors and institutions; permissions to publish are being sought.",
+    "sourcesTitle": "Sources & image credits",
+    "sourcesBody": "Spiritan Archives of Chevilly-Larue · the GESCOD brochure (© Michel Weyland) · the chronicle of Brother Laurent Potvin, “L'Afrique aux mille couleurs” (2003) · the Antheal Vision film · photographs from the alumni network.",
+    "rightsTitle": "Rights & permissions",
+    "rightsBody": "The images and documents remain the property of their holders. Anyone holding rights over a published item may request its correction or removal by writing to us.",
+    "privacyTitle": "Personal data (GDPR)",
+    "privacyBody": "Information gathered through the forms — membership and contribution alike — serves only to sustain the alumni network and is never sold to third parties. You hold the right of access, rectification and erasure: write to contact@debout-stoll.org.",
+    "editorTitle": "Publisher",
+    "editorBody": "The alumni network of Collège Stoll d'Akono — contact@debout-stoll.org — debout-stoll.org.",
+    "contact": "Write to us"
+  }
+}

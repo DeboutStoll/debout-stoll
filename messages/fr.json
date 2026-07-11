@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "title": "Debout, Stoll ! — Collège Stoll d'Akono & Petit Séminaire St-Joseph",
+    "description": "SOS Collège Stoll d'Akono — un héritage en péril. La mémoire vivante d'une institution d'élite du Cameroun, et l'appel à tous les Stollois d'hier, d'aujourd'hui et de demain.",
+    "ogTitle": "SOS Collège Stoll d'Akono — un héritage en péril",
+    "ogDescription": "1 500 élèves en 2004, moins de 200 aujourd'hui. Un appel à tous les Stollois pour sauver soixante ans de mémoire, de discipline et d'excellence."
+  },
+  "nav": {
+    "brand": "STOLL · AKONO",
+    "racines": "Racines",
+    "eglise": "L'église",
+    "figures": "Figures",
+    "voix": "La voix",
+    "films": "Films",
+    "lieux": "Lieux",
+    "sources": "Sources",
+    "constat": "Le constat",
+    "rejoindre": "Rejoindre l'appel"
+  },
+  "cta": {
+    "join": "Adhérer au réseau",
+    "contribute": "Confier une photo, un souvenir"
+  },
+  "hero": {
+    "eyebrow": "Médiathèque du patrimoine · Akono, Cameroun",
+    "title": "Une même colline,",
+    "titleEm": "trois âges d'une œuvre",
+    "lede": "De la mission spiritaine alsacienne au collège bâti par les Frères Maristes venus du Québec : la mémoire vivante du Collège Stoll d'Akono et du Petit Séminaire Saint-Joseph qui l'a précédé.",
+    "stat1v": "1919", "stat1l": "Arrivée du Père Stoll",
+    "stat2v": "1963", "stat2l": "Fondation du Collège",
+    "stat3v": "14 ha", "stat3l": "Domaine en forêt",
+    "stat4v": "60+", "stat4l": "Années de mémoire"
+  },
+  "racines": {
+    "num": "I · RACINES",
+    "title": "Bâti sur les vestiges du séminaire",
+    "intro": "Le Collège Stoll n'a pas surgi d'un sol vierge. Il s'élève <strong>sur l'emplacement occupé jadis, en grande partie, par le Petit Séminaire d'Akono</strong>, sur une mission fondée par un spiritain alsacien et prolongée par des Frères venus du Canada. Trois institutions, un même patronage, une même terre."
+  },
+  "eglise": {
+    "num": "II · LE JOYAU",
+    "title": "L'église, matrice de toute l'œuvre",
+    "f1title": "Une cathédrale en pleine brousse",
+    "f1p1": "Édifiée entre 1933 et 1938 selon les plans du Père Stoll et sous la conduite du Frère Alphonse Quémeneur, l'église Notre-Dame des Sept Douleurs est tenue au Cameroun et dans la sous-région pour <strong>l'un des plus beaux monuments de l'histoire de la foi catholique</strong>. Tuiles « queue de castor », briques, bois : les modes de construction alsaciens, adaptés à la forêt équatoriale.",
+    "f1p2": "C'est cette église qui a donné son âme au lieu. Le peintre Atini Charles, découvert par le Frère Lavoie <strong>alors qu'il peignait l'église d'Akono</strong>, ornera plus tard les murs du Collège Stoll.",
+    "f1p3": "Le Père Stoll y répétait : <em>« Il faut traiter avec respect les choses de Dieu. »</em> Cette parole, gravée en éwondo, veille toujours à l'entrée du collège.",
+    "f1cap": "<b>Aujourd'hui.</b> La façade ocre et blanche de Notre-Dame des Sept Douleurs. <span style=\"opacity:.7\">© GESCOD / Michel Weyland</span>",
+    "strip1": "<b>1. Le bâtisseur.</b> Le Père Stoll sur le chantier de la mission. © Archives spiritaines, Chevilly-Larue.",
+    "strip2": "<b>2. Le peuple de Dieu.</b> L'allée centrale un jour de fête, vers 1937.",
+    "strip3": "<b>3. La façade, 1937.</b> Notre-Dame des Sept Douleurs lors d'une fête. © Archives spiritaines.",
+    "f2title": "Un enfant de la colline revient la consacrer",
+    "f2p1": "La scène dit tout de l'histoire d'Akono. Celui qui inaugure le Collège Stoll ce 23 février 1969, <strong>M. Paul Biya, Secrétaire Général à la Présidence</strong>, fut lui-même <strong>élève du Petit Séminaire Saint-Joseph d'Akono</strong> — l'institution-mère bâtie sur cette même colline. Un enfant formé sur ces terres y revient, en représentant de l'État, pour consacrer la nouvelle œuvre qui prolonge l'ancienne.",
+    "f2p2": "Autour de la table, les trois piliers réunis : l'<strong>État camerounais</strong>, l'<strong>Église</strong> (le Nonce Apostolique) et le <strong>Canada</strong> des Frères Maristes (l'Ambassadeur). La colline d'Akono, du séminaire au collège, tient là toute sa promesse.",
+    "f2p3": "Trois semaines plus tôt, le Père Stoll lui-même, invité depuis sa retraite alsacienne, avait répondu par une lettre datée du <strong>2 février 1969</strong> — touché qu'un collège porte son nom, « un collège dont il avait rêvé lors de sa charge de curé ».",
+    "f2cap": "<b>23 février 1969.</b> M. Paul Biya — ancien élève du Petit Séminaire d'Akono — inaugure le Collège Stoll aux côtés du Nonce Apostolique et de l'Ambassadeur du Canada. <span style=\"opacity:.7\">Document couleur d'époque — archive rare.</span>"
+  },
+  "figures": {
+    "num": "III · FIGURES",
+    "title": "Le panthéon des fondateurs et des maîtres",
+    "intro": "Sept visages, sept vies au service d'une même œuvre — du spiritain alsacien au chroniqueur québécois, de l'archevêque fondateur à une figure aimée de la mémoire orale, jusqu'à un ancien élève devenu artiste de rayonnement mondial. <strong>Le panthéon de celles et ceux qui ont fait Stoll — et que Stoll a fait rayonner.</strong>"
+  },
+  "voix": {
+    "num": "IV · LA VOIX DES FONDATEURS",
+    "title": "Ce que la chronique nous a légué",
+    "intro": "Le récit du Frère Laurent Potvin, témoin oculaire, donne à cette histoire sa chair. Trois passages en forment le cœur.",
+    "sosEyebrow": "⚠ SOS Collège Stoll — un héritage en péril",
+    "sosBig": "1 500 élèves en 2004. Moins de 200 aujourd'hui.",
+    "sosP": "Une institution d'élite conçue pour 2 000 jeunes se vide depuis le départ des Maristes. Un héritage ne meurt pas de vieillesse : il meurt d'oubli. Ce que Stoll a formé doit aujourd'hui porter Stoll.",
+    "sosClose": "Gardiens d'un héritage, bâtisseurs de l'avenir — le moment d'agir, c'est maintenant."
+  },
+  "films": {
+    "num": "V · IMAGES ANIMÉES",
+    "title": "Stoll & Akono en mouvement",
+    "intro": "Le patrimoine ne se lit pas seulement : il se regarde vivre. Ces films rassemblent les regards portés sur le collège, la mission et son domaine. <strong>Cliquez sur ▶ pour lancer chaque vidéo.</strong>"
+  },
+  "lieux": {
+    "num": "VI · LIEUX",
+    "title": "Le domaine et ses pierres",
+    "intro": "Quatorze hectares en pleine forêt équatoriale : l'église joyau, les deux campus, les internats, le complexe sportif unique dans la sous-région. Déposez ici les images à mesure qu'elles sont retrouvées ou photographiées."
+  },
+  "sources": {
+    "num": "VII · SOURCES",
+    "title": "Où puiser la mémoire",
+    "intro": "Les pièces d'archives, fonds et films à solliciter pour compléter cette médiathèque."
+  },
+  "constat": {
+    "num": "VIII · LE CONSTAT",
+    "title": "Ce que Stoll avait — ce qu'il est devenu",
+    "lead": "Ce document, tourné sur place, montre l'ampleur de la chute. Le Collège Stoll n'était pas une école ordinaire : c'était un <strong>ensemble intégré, moderne, autosuffisant</strong>, à la pointe pour son époque. Tout y était neuf, entretenu, encadré, automatisé. Aujourd'hui, l'essentiel est <strong>à l'abandon</strong>.",
+    "chaptersLabel": "Aller à un moment fort :",
+    "invLead": "Un patrimoine matériel et humain considérable, aujourd'hui en péril :",
+    "strike": "Tout cela existait, fonctionnait, formait des générations. <strong>Tout cela, aujourd'hui, est menacé d'oubli.</strong> Voilà pourquoi l'appel ne peut plus attendre."
+  },
+  "rejoindre": {
+    "num": "IX · REJOINDRE L'APPEL",
+    "title": "Ceux que Stoll a formés doivent porter Stoll",
+    "lead": "Ce n'est plus une pétition, c'est un engagement. En rejoignant le réseau des anciens, vous inscrivez votre nom dans la chaîne qui relie la première promotion à celles de demain. <strong>Chaque adhésion compte ; chaque geste sauve un peu de la maison.</strong>",
+    "statToday2004": "Élèves en 2004",
+    "statTodayNow": "Élèves aujourd'hui",
+    "statSeats": "Places à remplir",
+    "statMembers": "Membres du réseau",
+    "actionsLead": "Trois façons d'agir, dès maintenant :",
+    "shareLabel": "Faire passer l'appel :",
+    "quote": "« Le réseau des anciens du Collège Stoll d'Akono : héritiers d'une même maison, gardiens de son avenir. »"
+  },
+  "form": {
+    "title": "Adhérer au réseau des anciens",
+    "hint": "Anciens élèves, parents, sympathisants — d'hier, d'aujourd'hui et de demain.",
+    "name": "Nom & prénom", "namePh": "Votre nom",
+    "promo": "Promotion / année", "promoPh": "ex. 1998",
+    "city": "Ville / pays", "cityPh": "ex. Douala, Cameroun",
+    "email": "Email", "emailPh": "vous@exemple.com",
+    "message": "Message (facultatif)", "messagePh": "Un mot, un souvenir, une proposition…",
+    "submit": "Rejoindre l'appel →",
+    "submitting": "Envoi en cours…",
+    "note": "Vos informations ne servent qu'au réseau des anciens. Aucune diffusion à des tiers.",
+    "successTitle": "Bienvenue dans le réseau.",
+    "success": "Votre adhésion est enregistrée. Un email de confirmation vous a été envoyé. Merci de porter Stoll avec nous.",
+    "error": "Une erreur est survenue. Merci de réessayer, ou écrivez-nous à contact@debout-stoll.org.",
+    "required": "Ce champ est obligatoire.",
+    "invalidEmail": "Merci d'indiquer une adresse email valide.",
+    "tooMany": "Trop de tentatives. Merci de patienter un instant."
+  },
+  "footer": {
+    "tagline": "Le réseau des anciens du Collège Stoll d'Akono : héritiers d'une même maison, gardiens de son avenir.",
+    "sig": "Médiathèque du patrimoine · en construction permanente",
+    "join": "Rejoindre l'appel",
+    "contribute": "Contribuer à la mémoire",
+    "credits": "Crédits & mentions légales"
+  },
+  "common": {
+    "backHome": "← Retour à l'accueil",
+    "language": "Langue",
+    "dataLightLabel": "Mode léger",
+    "liveMembers": "membres à ce jour"
+  },
+  "contribute": {
+    "back": "← Retour à l'accueil",
+    "title": "Confier une photo, un souvenir, une figure oubliée",
+    "lead": "La mémoire de Stoll est entre vos mains. Chaque photo de classe, chaque anecdote, chaque nom oublié enrichit le panthéon et la galerie. Votre contribution est relue avant publication.",
+    "name": "Votre nom", "namePh": "Votre nom",
+    "email": "Email (pour vous recontacter)", "emailPh": "vous@exemple.com",
+    "kind": "Nature de la contribution",
+    "kindPhoto": "Photo / document d'archive",
+    "kindTestimony": "Témoignage / souvenir",
+    "kindFigure": "Figure oubliée à ajouter au panthéon",
+    "title2": "Titre / sujet", "title2Ph": "ex. Promotion 1985, cérémonie de fin d'année",
+    "story": "Votre récit", "storyPh": "Décrivez la scène, les personnes, l'année, le lieu…",
+    "file": "Photo ou document (facultatif)",
+    "fileHint": "JPG, PNG ou PDF — 8 Mo maximum.",
+    "consent": "J'autorise la publication de cette contribution sur le site, avec mention de la source.",
+    "submit": "Envoyer ma contribution →",
+    "submitting": "Envoi en cours…",
+    "successTitle": "Merci — c'est bien reçu.",
+    "success": "Votre contribution rejoint la file de modération. Nous vous recontacterons si besoin. Grâce à vous, la mémoire grandit.",
+    "error": "L'envoi a échoué. Merci de réessayer ou d'écrire à contact@debout-stoll.org.",
+    "consentRequired": "Merci de cocher l'autorisation de publication.",
+    "note": "Modération humaine. Rien n'est publié sans validation. Vos données ne servent qu'au réseau des anciens."
+  },
+  "credits": {
+    "back": "← Retour à l'accueil",
+    "title": "Crédits & mentions légales",
+    "intro": "Cette médiathèque est un projet de mémoire porté par le réseau des anciens du Collège Stoll d'Akono. Elle rassemble des archives dont les droits appartiennent à leurs auteurs et institutions ; les autorisations de diffusion sont en cours de recueil.",
+    "sourcesTitle": "Sources & crédits iconographiques",
+    "sourcesBody": "Archives spiritaines de Chevilly-Larue · brochure GESCOD (© Michel Weyland) · chronique du Frère Laurent Potvin, « L'Afrique aux mille couleurs » (2003) · document filmé Antheal Vision · photos du réseau des anciens.",
+    "rightsTitle": "Droits & autorisations",
+    "rightsBody": "Les images et documents restent la propriété de leurs détenteurs. Toute personne disposant de droits sur un élément publié peut demander sa correction ou son retrait en nous écrivant.",
+    "privacyTitle": "Données personnelles (RGPD)",
+    "privacyBody": "Les informations recueillies via les formulaires (adhésion, contribution) ne servent qu'à l'animation du réseau des anciens et ne sont jamais cédées à des tiers. Vous disposez d'un droit d'accès, de rectification et de suppression : écrivez à contact@debout-stoll.org.",
+    "editorTitle": "Éditeur",
+    "editorBody": "Réseau des anciens du Collège Stoll d'Akono — contact@debout-stoll.org — debout-stoll.org.",
+    "contact": "Nous écrire"
+  }
+}

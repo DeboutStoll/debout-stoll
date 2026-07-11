@@ -1,0 +1,17 @@
+# Local container run:  docker compose up --build
+# Production: point env_file at your real secrets and mount a data volume,
+# or (recommended) deploy on Vercel — see DEPLOIEMENT.md.
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=production
+    volumes:
+      # Persist the local JSON store + uploads when NOT using Supabase.
+      - ./data:/app/data
+      - ./public/uploads:/app/public/uploads
+    restart: unless-stopped
