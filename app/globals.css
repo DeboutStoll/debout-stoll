@@ -537,3 +537,58 @@ main section{counter-increment:chapter}
   [data-reveal],[data-stagger]>*{filter:none!important;opacity:1!important;transform:none!important}
   .scroll-cue{opacity:1!important}
 }
+
+/* =====================================================================
+   RESPONSIVE HARDENING — flawless on phones, tablets, desktop
+   ===================================================================== */
+
+/* Grids never overflow a narrow viewport (min() caps the track width). */
+.people{grid-template-columns:repeat(auto-fill,minmax(min(224px,100%),1fr))}
+.videos{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.anecdotes{grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
+.sources{grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+.constat-inventory{grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr))}
+img,video,iframe{max-width:100%}
+
+/* Nav: desktop unchanged (wrapper is transparent); mobile becomes a
+   two-row bar — brand + language on top, section links scroll horizontally. */
+.toc-links{display:contents}
+@media(max-width:720px){
+  nav.toc .wrap{flex-wrap:wrap;padding:10px 16px;gap:4px}
+  nav.toc .brand{order:1;margin-right:auto}
+  .lang-switch{order:2;margin-left:auto}
+  .toc-links{order:3;display:flex;flex:1 1 100%;gap:2px;margin-top:8px;padding-bottom:2px;
+    overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    -webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);
+    mask-image:linear-gradient(90deg,#000 92%,transparent)}
+  .toc-links::-webkit-scrollbar{display:none}
+  .toc-links a{white-space:nowrap;flex:0 0 auto}
+}
+
+/* Reclaim edge space + calm the cinematic flourishes on small screens. */
+@media(max-width:520px){
+  .wrap{padding:0 18px}
+  nav.toc .wrap{padding-left:16px;padding-right:16px}
+  .sec-head::after{opacity:.32}
+  .join-actions .jbtn{flex:1 1 100%;justify-content:center}
+}
+@media(max-width:400px){
+  .join-stats{gap:8px}
+  .jstat{padding:14px 8px}
+  .jstat b{font-size:1.5rem}
+  .hero-meta{gap:18px}
+  .hero-meta div{min-width:96px}
+}
+
+/* Touch devices have no hover: reveal the zoom hint + ease the lightbox. */
+@media(hover:none){
+  .lightbox-hint{opacity:.8}
+  .lightbox{padding:4vh 3vw}
+  .lightbox-close{top:6px;right:6px}
+}
+
+/* Larger tap targets for share / chapter controls on coarse pointers. */
+@media(pointer:coarse){
+  .chap{padding:10px 16px}
+  .share-btn{width:44px;height:44px}
+}

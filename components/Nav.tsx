@@ -63,16 +63,18 @@ export default function Nav() {
           />
           {t('brand')}
         </Link>
-        {SECTION_IDS.map((id) => (
-          <a
-            key={id}
-            href={`${base}#${id}`}
-            data-section={id}
-            style={id === 'rejoindre' ? { color: 'var(--gold-soft)' } : undefined}
-          >
-            {t(id)}
-          </a>
-        ))}
+        <div className="toc-links">
+          {SECTION_IDS.map((id) => (
+            <a
+              key={id}
+              href={`${base}#${id}`}
+              data-section={id}
+              style={id === 'rejoindre' ? { color: 'var(--gold-soft)' } : undefined}
+            >
+              {t(id)}
+            </a>
+          ))}
+        </div>
         <LangSwitch />
       </div>
     </nav>

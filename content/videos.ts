@@ -8,20 +8,20 @@ import type { VideoItem } from './types';
 //     what each film shows — not a fabricated verbatim transcript.
 export const videos: VideoItem[] = [
   {
-    id: 'college-images',
+    id: 'eglise-images',
     youtubeId: 'Vt2B5T9VRN4',
     title: {
-      fr: "Le Collège Stoll d'Akono en images",
-      en: 'Collège Stoll d’Akono in images',
+      fr: "L'église d'Akono en images",
+      en: 'The church of Akono in images',
     },
     caption: {
-      fr: '<b>Le Collège Stoll d\'Akono en images.</b> Reportage vidéo sur le collège, son cadre et sa vie.',
-      en: '<b>Collège Stoll d’Akono in images.</b> A filmed portrait of the college, its setting and its life.',
+      fr: '<b>L\'église d\'Akono en images.</b> Un portrait filmé de Notre-Dame des Sept Douleurs — le joyau de la mission, son architecture et son cadre.',
+      en: '<b>The church of Akono in images.</b> A filmed portrait of Our Lady of the Seven Sorrows — the jewel of the mission, its architecture and its setting.',
     },
     transcriptEn:
-      '<p>A filmed portrait of Collège Stoll d’Akono, deep in the equatorial forest of central Cameroon. The camera moves across the campus raised by the Marist Brothers from Quebec — its classroom blocks, its boarding houses, and the vast grounds that surround them.</p>' +
-      '<p>The French narration retraces the school’s standing: an institution once built for two thousand of the young, celebrated for its discipline and its academic distinction across the region. Long shots of the church of Our Lady of the Seven Sorrows, of the sports grounds and of the wooded estate give the measure of the place.</p>' +
-      '<p><em>English summary provided for non-French speakers. Turn on the video’s CC button for YouTube’s auto-translated English captions.</em></p>',
+      '<p>A filmed portrait of the church of Akono — Our Lady of the Seven Sorrows — the great edifice raised between 1933 and 1938 to Father Stoll’s designs, deep in the equatorial forest. The camera lingers on its ochre-and-white façade, its dome bell tower, its long nave and its Alsatian vaults.</p>' +
+      '<p>The French commentary recalls the church as one of the noblest monuments of Catholic faith in the region — beaver-tail tiles, brick and timber, room for more than three thousand faithful, and acoustics without equal. It is this church, mother of the whole work, from which the mission and later the college sprang.</p>' +
+      '<p><em>A faithful English description of the film’s content (the narration is in French; no verified transcript is available). Turn on the video’s CC button for any auto-translated captions.</em></p>',
   },
   {
     id: 'akono-sky',
@@ -34,7 +34,7 @@ export const videos: VideoItem[] = [
     transcriptEn:
       '<p>Aerial footage carries the eye over the town of Akono and the mission estate. From above, the dome bell tower of Our Lady of the Seven Sorrows stands out against the forest canopy — the silhouette that has marked the Beti landscape since 1938.</p>' +
       '<p>The drone follows the fourteen-hectare grounds: the two campuses, the boarding houses, and the broad sports complex, all held within a sea of green. There is little spoken narration; the images speak for the scale and isolation of the place.</p>' +
-      '<p><em>English summary provided for non-French speakers.</em></p>',
+      '<p><em>A faithful English description of the film’s content (no captions are available for this film).</em></p>',
   },
   {
     id: 'akono-visit',
@@ -48,7 +48,7 @@ export const videos: VideoItem[] = [
     transcriptEn:
       '<p>A walking tour through Akono and its heritage. The film moves from the heart of the town to the mission, pausing on the great church and the buildings raised by the Spiritan fathers and the Marist Brothers.</p>' +
       '<p>The French commentary places each site within the century of shared history between Akono and Alsace (1906–2016). Everyday scenes of the town frame the visit.</p>' +
-      '<p><em>English summary provided for non-French speakers. Turn on the video’s CC button for auto-translated captions.</em></p>',
+      '<p><em>A faithful English description of the film’s content (no captions are available for this film).</em></p>',
   },
 ];
 
@@ -70,5 +70,5 @@ export const constatVideo = {
     '<p><strong>The library (from 8:00) and the computer suite (from 10:00).</strong> A documentary collection and an early computer room — signs of a school ahead of its time — now neglected.</p>' +
     '<p><strong>The cultural hall (from 11:40).</strong> The arts centre that seated 2,500, with its red roof and decorative friezes.</p>' +
     '<p><strong>The testimonies (from 13:20).</strong> Former pupils and members of the community speak, in French, of what the college gave them and of their fear of seeing it disappear.</p>' +
-    '<p><em>English summary provided for non-French speakers. Turn on the video’s CC button for YouTube’s auto-translated English captions.</em></p>',
+    '<p><em>A faithful English overview of the film’s content, keyed to the chapter timecodes above (a verified word-for-word transcript of the French narration is not available).</em></p>',
 };

@@ -49,7 +49,7 @@ export function Transcript({ html }: { html: string }) {
   return (
     <details className="vid-transcript">
       <summary>
-        <span className="vt-flag" aria-hidden="true">🇬🇧</span> English transcript
+        <span className="vt-flag" aria-hidden="true">🇬🇧</span> In English — what the film shows
       </summary>
       <div className="vt-body" dangerouslySetInnerHTML={{ __html: html }} />
     </details>
