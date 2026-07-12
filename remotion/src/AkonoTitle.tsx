@@ -68,6 +68,31 @@ export const AkonoTitle: React.FC<AkonoTitleProps> = ({ presents, tagline }) => 
       />
       <Embers count={30} opacity={emberOpacity} />
 
+      {/* "presents" credit — spread edge-to-edge across the top band */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '17%',
+          left: 0,
+          right: 0,
+          padding: '0 5%',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          opacity: presentsOpacity,
+          color: COLORS.boneDim,
+          fontSize: 32,
+          fontWeight: 600,
+          letterSpacing: 3,
+          textTransform: 'uppercase',
+          zIndex: 2,
+        }}
+      >
+        {presents.split(' ').map((w, i) => (
+          <span key={i}>{w}</span>
+        ))}
+      </div>
+
       <AbsoluteFill style={{ opacity: fadeOut, perspective: 1700, perspectiveOrigin: '50% 42%' }}>
         <AbsoluteFill
           style={{
@@ -101,10 +126,6 @@ export const AkonoTitle: React.FC<AkonoTitleProps> = ({ presents, tagline }) => 
                 mixBlendMode: 'screen',
               }}
             />
-          </div>
-
-          <div style={{ opacity: presentsOpacity, color: COLORS.boneDim, letterSpacing: 15, textTransform: 'uppercase', fontSize: 22, fontWeight: 600 }}>
-            {presents}
           </div>
 
           <div

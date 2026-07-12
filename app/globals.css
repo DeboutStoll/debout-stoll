@@ -86,7 +86,8 @@ section{padding:82px 0;border-bottom:1px solid var(--line)}
 .sec-title{font-size:clamp(1.8rem,3.6vw,2.7rem);color:var(--bone);position:relative;
   background:linear-gradient(180deg,var(--bone),var(--bone-dim));
   -webkit-background-clip:text;background-clip:text}
-.sec-intro{max-width:66ch;color:var(--bone-dim);margin:18px 0 44px;font-size:1.05rem}
+.sec-intro{max-width:70ch;color:var(--bone-dim);margin:18px 0 44px;font-size:1.05rem;
+  text-align:justify;text-align-last:left;hyphens:auto}
 .sec-intro strong{color:var(--gold-soft);font-weight:600}
 
 /* ---- timeline ---- */
@@ -276,7 +277,8 @@ figcaption b{color:var(--gold-soft);font-weight:600}
 #rejoindre{background:
   radial-gradient(900px 500px at 80% 0%, rgba(176,85,47,.16), transparent 60%),
   linear-gradient(180deg, var(--paper-2), var(--paper))}
-.join-lead{max-width:64ch;color:var(--bone-dim);font-size:1.08rem;margin:18px 0 40px}
+.join-lead{max-width:70ch;color:var(--bone-dim);font-size:1.08rem;margin:18px 0 40px;
+  text-align:justify;text-align-last:left;hyphens:auto}
 .join-lead strong{color:var(--gold-soft)}
 .join-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:start}
 .join-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}
