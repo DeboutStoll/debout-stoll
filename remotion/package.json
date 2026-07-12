@@ -1,0 +1,28 @@
+{
+  "name": "debout-stoll-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Motion-graphics for Debout, Stoll! — the AKONO title sequence and an animated data segment, rendered to MP4 with Remotion (isolated from the Next.js app).",
+  "scripts": {
+    "studio": "remotion studio",
+    "render:title": "remotion render AkonoTitle out/akono-title.mp4",
+    "render:stat": "remotion render StatDecline out/stat-decline.mp4",
+    "render:all": "npm run render:title && npm run render:stat",
+    "still": "remotion still AkonoTitle out/akono-title.png --frame=95",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.488",
+    "remotion": "4.0.488",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.5.4"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}
