@@ -11,10 +11,10 @@ const SECTION_IDS = [
   'eglise',
   'figures',
   'voix',
+  'constat',
   'films',
   'lieux',
   'sources',
-  'constat',
   'rejoindre',
 ] as const;
 

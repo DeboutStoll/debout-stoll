@@ -44,7 +44,20 @@ export default function Constat() {
         <div className="sec-head">
           <span className="num">{t('num')}</span>
         </div>
-        <h2 className="sec-title">{t('title')}</h2>
+
+        {/* SOS — preamble of the reckoning */}
+        <div className="sos sos-preamble">
+          <p className="eyebrow">{t('sosEyebrow')}</p>
+          <p className="big">
+            <b>{t('sosBig')}</b>
+          </p>
+          <p>{t('sosP')}</p>
+          <p style={{ marginTop: 16, color: 'var(--gold-soft)', fontStyle: 'italic' }}>
+            {t('sosClose')}
+          </p>
+        </div>
+
+        <h2 className="sec-title" style={{ marginTop: 40 }}>{t('title')}</h2>
         <RichText as="p" className="constat-lead" path="constat.lead" />
 
         <figure className="constat-video" ref={figureRef}>

@@ -61,29 +61,29 @@
   "voix": {
     "num": "IV · THE VOICE OF THE FOUNDERS",
     "title": "What the chronicle handed down to us",
-    "intro": "The account of Brother Laurent Potvin, an eyewitness to it all, gives this history its flesh and blood. Three passages form its beating heart.",
-    "sosEyebrow": "⚠ SOS Collège Stoll — a heritage in peril",
-    "sosBig": "Fifteen hundred pupils in 2004. Fewer than two hundred today.",
-    "sosP": "A school built for two thousand of the young has been emptying ever since the Marists departed. A heritage does not die of old age — it dies of neglect. What Stoll once formed must now, in turn, carry Stoll.",
-    "sosClose": "Keepers of an inheritance, builders of what comes next — the hour to act is now."
+    "intro": "The account of Brother Laurent Potvin, an eyewitness to it all, gives this history its flesh and blood. Three passages form its beating heart."
   },
   "films": {
-    "num": "V · MOVING IMAGES",
+    "num": "VI · MOVING IMAGES",
     "title": "Stoll & Akono, in motion",
     "intro": "Heritage is not only read; it is watched, alive. These films gather the many gazes cast upon the college, the mission and its estate. <strong>Press ▶ to begin each film.</strong>"
   },
   "lieux": {
-    "num": "VI · PLACES",
+    "num": "VII · PLACES",
     "title": "The estate and its stones",
     "intro": "Fourteen hectares deep in equatorial forest: the jewel of a church, the two campuses, the boarding houses, a sports complex without equal in the region. Add images here as they are recovered or newly photographed."
   },
   "sources": {
-    "num": "VII · SOURCES",
+    "num": "VIII · SOURCES",
     "title": "Where the memory may be drawn",
     "intro": "The archives, collections and films to be sought out in order to complete this record."
   },
   "constat": {
-    "num": "VIII · THE RECKONING",
+    "num": "V · THE RECKONING",
+    "sosEyebrow": "⚠ SOS Collège Stoll — a heritage in peril",
+    "sosBig": "Fifteen hundred pupils in 2004. Fewer than two hundred today.",
+    "sosP": "A school built for two thousand of the young has been emptying ever since the Marists departed. A heritage does not die of old age — it dies of neglect. What Stoll once formed must now, in turn, carry Stoll.",
+    "sosClose": "Keepers of an inheritance, builders of what comes next — the hour to act is now.",
     "title": "What Stoll possessed — and what it has become",
     "lead": "This document, filmed on the ground, lays bare the depth of the fall. Collège Stoll was no ordinary school: it was a <strong>self-contained, modern, self-sufficient whole</strong>, at the very edge of its age. Everything was new, tended, supervised, automated. Today, the essential lies <strong>abandoned</strong>.",
     "chaptersLabel": "Skip to a key moment:",

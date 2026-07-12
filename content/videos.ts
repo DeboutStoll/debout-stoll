@@ -28,12 +28,12 @@ export const videos: VideoItem[] = [
     youtubeId: 'wAgNCMe1OeY',
     title: { fr: 'Akono vue du ciel', en: 'Akono from the sky' },
     caption: {
-      fr: '<b>Akono vue du ciel.</b> Vue aérienne de la ville et du domaine de la mission.',
-      en: '<b>Akono from the sky.</b> An aerial view of the town and the estate of the mission.',
+      fr: '<b>Akono vue du ciel.</b> Vue aérienne de la ville et du domaine de la mission. En plein cours de musique au centre artistique du collège Stoll d\'Akono.',
+      en: '<b>Akono from the sky.</b> An aerial view of the town and the estate of the mission — and a music lesson under way at the arts centre of Collège Stoll d\'Akono.',
     },
     transcriptEn:
       '<p>Aerial footage carries the eye over the town of Akono and the mission estate. From above, the dome bell tower of Our Lady of the Seven Sorrows stands out against the forest canopy — the silhouette that has marked the Beti landscape since 1938.</p>' +
-      '<p>The drone follows the fourteen-hectare grounds: the two campuses, the boarding houses, and the broad sports complex, all held within a sea of green. There is little spoken narration; the images speak for the scale and isolation of the place.</p>' +
+      '<p>The drone follows the fourteen-hectare grounds: the two campuses, the boarding houses, and the broad sports complex, all held within a sea of green. The film also carries us inside the arts centre, where a music lesson is under way — the living present of a school still teaching.</p>' +
       '<p><em>A faithful English description of the film’s content (no captions are available for this film).</em></p>',
   },
   {
@@ -42,8 +42,8 @@ export const videos: VideoItem[] = [
     start: 30,
     title: { fr: 'Akono, la visite', en: 'Akono, the tour' },
     caption: {
-      fr: '<b>Akono, la visite.</b> Promenade dans Akono et son patrimoine (dès 0:30).',
-      en: '<b>Akono, the tour.</b> A walk through Akono and its heritage (from 0:30).',
+      fr: '<b>Akono, la visite.</b> Promenade dans Akono et son patrimoine.',
+      en: '<b>Akono, the tour.</b> A walk through Akono and its heritage.',
     },
     transcriptEn:
       '<p>A walking tour through Akono and its heritage. The film moves from the heart of the town to the mission, pausing on the great church and the buildings raised by the Spiritan fathers and the Marist Brothers.</p>' +

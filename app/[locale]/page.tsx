@@ -49,10 +49,10 @@ export default async function HomePage({
       <EgliseFeature />
       <Pantheon />
       <Voix />
+      <Constat />
       <Videos />
       <Gallery />
       <Sources />
-      <Constat />
       <Rejoindre />
       <Footer />
     </>

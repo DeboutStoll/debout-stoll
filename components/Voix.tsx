@@ -33,17 +33,6 @@ export default function Voix() {
             </div>
           ))}
         </div>
-
-        <div className="sos">
-          <p className="eyebrow">{t('sosEyebrow')}</p>
-          <p className="big">
-            <b>{t('sosBig')}</b>
-          </p>
-          <p>{t('sosP')}</p>
-          <p style={{ marginTop: 16, color: 'var(--gold-soft)', fontStyle: 'italic' }}>
-            {t('sosClose')}
-          </p>
-        </div>
       </div>
     </section>
   );

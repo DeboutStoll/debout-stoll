@@ -592,3 +592,58 @@ img,video,iframe{max-width:100%}
   .chap{padding:10px 16px}
   .share-btn{width:44px;height:44px}
 }
+
+/* =====================================================================
+   LIEUX — advanced cinematic carousel (ARTE)
+   ===================================================================== */
+.carousel{margin-top:8px;position:relative}
+.carousel-stage{position:relative;aspect-ratio:16/9;border:1px solid var(--line-strong);border-radius:8px;
+  overflow:hidden;background:#000;box-shadow:0 40px 100px -40px #000}
+.carousel-slide{position:absolute;inset:0;will-change:transform,opacity,filter;cursor:grab;touch-action:pan-y}
+.carousel-slide:active{cursor:grabbing}
+.carousel-kenburns{position:absolute;inset:0;will-change:transform}
+.carousel-kenburns img{user-select:none;-webkit-user-drag:none}
+.carousel-bars{position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,.5),transparent 18%,transparent 60%,rgba(5,4,3,.88))}
+.carousel-caption{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:24px 28px;
+  color:var(--bone);font-size:1rem;line-height:1.5;pointer-events:none;max-width:70ch;
+  text-shadow:0 2px 14px rgba(0,0,0,.85)}
+.carousel-caption b{color:var(--gold-soft)}
+.carousel-expand{position:absolute;top:14px;right:14px;z-index:5;width:40px;height:40px;border-radius:6px;
+  border:1px solid var(--line-strong);background:rgba(5,4,3,.55);backdrop-filter:blur(6px);
+  color:var(--gold-soft);font-size:1.05rem;cursor:zoom-in;transition:background .25s,transform .25s}
+.carousel-expand:hover{background:var(--laterite);color:#fff;transform:scale(1.06)}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:54px;height:54px;
+  border-radius:50%;border:1px solid var(--line-strong);background:rgba(5,4,3,.5);backdrop-filter:blur(8px);
+  color:var(--bone);font-size:1.9rem;line-height:1;cursor:pointer;display:grid;place-items:center;font-family:inherit;
+  transition:background .3s,transform .3s,color .3s,border-color .3s}
+.carousel-arrow:hover{background:var(--laterite);color:#fff;border-color:var(--laterite-2)}
+.carousel-arrow.prev{left:16px}.carousel-arrow.next{right:16px}
+.carousel-arrow.prev:hover{transform:translateY(-50%) translateX(-3px)}
+.carousel-arrow.next:hover{transform:translateY(-50%) translateX(3px)}
+.carousel-counter{position:absolute;top:16px;left:18px;z-index:5;font-size:.76rem;letter-spacing:.18em;
+  color:var(--bone-dim);background:rgba(5,4,3,.5);backdrop-filter:blur(6px);padding:6px 12px;border-radius:4px;
+  border:1px solid var(--line);display:inline-flex;gap:6px;align-items:baseline}
+.carousel-counter b{color:var(--gold);font-size:1rem;font-weight:700}
+.carousel-progress{height:2px;margin-top:10px;background:var(--line);border-radius:2px;overflow:hidden}
+.carousel-progress span{display:block;height:100%;transform-origin:left;
+  background:linear-gradient(90deg,var(--laterite-2),var(--gold))}
+.carousel-thumbs{display:flex;gap:8px;margin-top:14px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.carousel-thumbs::-webkit-scrollbar{height:6px}
+.carousel-thumbs::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:3px}
+.carousel-thumb{flex:0 0 auto;width:92px;height:60px;border:1px solid var(--line);border-radius:4px;
+  overflow:hidden;cursor:pointer;background:var(--paper-2);opacity:.5;padding:0;position:relative;
+  transition:opacity .3s,border-color .3s,transform .3s}
+.carousel-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.carousel-thumb:hover{opacity:.85;transform:translateY(-2px)}
+.carousel-thumb.active{opacity:1;border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+
+/* SOS as the preamble of the Constat section */
+.sos-preamble{margin-top:22px}
+
+@media(max-width:640px){
+  .carousel-arrow{width:42px;height:42px;font-size:1.5rem}
+  .carousel-arrow.prev{left:10px}.carousel-arrow.next{right:10px}
+  .carousel-caption{font-size:.86rem;padding:16px 16px 18px}
+  .carousel-thumb{width:72px;height:48px}
+}

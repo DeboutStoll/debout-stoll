@@ -61,29 +61,29 @@
   "voix": {
     "num": "IV · LA VOIX DES FONDATEURS",
     "title": "Ce que la chronique nous a légué",
-    "intro": "Le récit du Frère Laurent Potvin, témoin oculaire, donne à cette histoire sa chair. Trois passages en forment le cœur.",
-    "sosEyebrow": "⚠ SOS Collège Stoll — un héritage en péril",
-    "sosBig": "1 500 élèves en 2004. Moins de 200 aujourd'hui.",
-    "sosP": "Une institution d'élite conçue pour 2 000 jeunes se vide depuis le départ des Maristes. Un héritage ne meurt pas de vieillesse : il meurt d'oubli. Ce que Stoll a formé doit aujourd'hui porter Stoll.",
-    "sosClose": "Gardiens d'un héritage, bâtisseurs de l'avenir — le moment d'agir, c'est maintenant."
+    "intro": "Le récit du Frère Laurent Potvin, témoin oculaire, donne à cette histoire sa chair. Trois passages en forment le cœur."
   },
   "films": {
-    "num": "V · IMAGES ANIMÉES",
+    "num": "VI · IMAGES ANIMÉES",
     "title": "Stoll & Akono en mouvement",
     "intro": "Le patrimoine ne se lit pas seulement : il se regarde vivre. Ces films rassemblent les regards portés sur le collège, la mission et son domaine. <strong>Cliquez sur ▶ pour lancer chaque vidéo.</strong>"
   },
   "lieux": {
-    "num": "VI · LIEUX",
+    "num": "VII · LIEUX",
     "title": "Le domaine et ses pierres",
     "intro": "Quatorze hectares en pleine forêt équatoriale : l'église joyau, les deux campus, les internats, le complexe sportif unique dans la sous-région. Déposez ici les images à mesure qu'elles sont retrouvées ou photographiées."
   },
   "sources": {
-    "num": "VII · SOURCES",
+    "num": "VIII · SOURCES",
     "title": "Où puiser la mémoire",
     "intro": "Les pièces d'archives, fonds et films à solliciter pour compléter cette médiathèque."
   },
   "constat": {
-    "num": "VIII · LE CONSTAT",
+    "num": "V · LE CONSTAT",
+    "sosEyebrow": "⚠ SOS Collège Stoll — un héritage en péril",
+    "sosBig": "1 500 élèves en 2004. Moins de 200 aujourd'hui.",
+    "sosP": "Une institution d'élite conçue pour 2 000 jeunes se vide depuis le départ des Maristes. Un héritage ne meurt pas de vieillesse : il meurt d'oubli. Ce que Stoll a formé doit aujourd'hui porter Stoll.",
+    "sosClose": "Gardiens d'un héritage, bâtisseurs de l'avenir — le moment d'agir, c'est maintenant.",
     "title": "Ce que Stoll avait — ce qu'il est devenu",
     "lead": "Ce document, tourné sur place, montre l'ampleur de la chute. Le Collège Stoll n'était pas une école ordinaire : c'était un <strong>ensemble intégré, moderne, autosuffisant</strong>, à la pointe pour son époque. Tout y était neuf, entretenu, encadré, automatisé. Aujourd'hui, l'essentiel est <strong>à l'abandon</strong>.",
     "chaptersLabel": "Aller à un moment fort :",
