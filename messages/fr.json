@@ -85,7 +85,12 @@
     "sosP": "Une institution d'élite conçue pour 2 000 jeunes se vide depuis le départ des Maristes. Un héritage ne meurt pas de vieillesse : il meurt d'oubli. Ce que Stoll a formé doit aujourd'hui porter Stoll.",
     "sosClose": "Gardiens d'un héritage, bâtisseurs de l'avenir — le moment d'agir, c'est maintenant.",
     "title": "Ce que Stoll avait — ce qu'il est devenu",
-    "lead": "Ce document, tourné sur place, montre l'ampleur de la chute. Le Collège Stoll n'était pas une école ordinaire : c'était un <strong>ensemble intégré, moderne, autosuffisant</strong>, à la pointe pour son époque. Tout y était neuf, entretenu, encadré, automatisé. Aujourd'hui, l'essentiel est <strong>à l'abandon</strong>.",
+    "leadHook": "Ce document, tourné sur place, montre l'ampleur de la chute.",
+    "leadBody": "Le Collège Stoll n'était pas une école ordinaire : c'était un ensemble intégré, moderne, autosuffisant, à la pointe pour son époque.",
+    "thenLabel": "Hier",
+    "thenStates": "neuf · entretenu · encadré · automatisé",
+    "nowLabel": "Aujourd'hui",
+    "leadStrike": "l'essentiel est à l'abandon.",
     "chaptersLabel": "Aller à un moment fort :",
     "invLead": "Un patrimoine matériel et humain considérable, aujourd'hui en péril :",
     "strike": "Tout cela existait, fonctionnait, formait des générations. <strong>Tout cela, aujourd'hui, est menacé d'oubli.</strong> Voilà pourquoi l'appel ne peut plus attendre."

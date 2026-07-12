@@ -85,7 +85,12 @@
     "sosP": "A school built for two thousand of the young has been emptying ever since the Marists departed. A heritage does not die of old age — it dies of neglect. What Stoll once formed must now, in turn, carry Stoll.",
     "sosClose": "Keepers of an inheritance, builders of what comes next — the hour to act is now.",
     "title": "What Stoll possessed — and what it has become",
-    "lead": "This document, filmed on the ground, lays bare the depth of the fall. Collège Stoll was no ordinary school: it was a <strong>self-contained, modern, self-sufficient whole</strong>, at the very edge of its age. Everything was new, tended, supervised, automated. Today, the essential lies <strong>abandoned</strong>.",
+    "leadHook": "This document, filmed on the ground, lays bare the depth of the fall.",
+    "leadBody": "Collège Stoll was no ordinary school: it was a self-contained, modern, self-sufficient whole, at the very edge of its age.",
+    "thenLabel": "Yesterday",
+    "thenStates": "new · maintained · supervised · automated",
+    "nowLabel": "Today",
+    "leadStrike": "the essential lies abandoned.",
     "chaptersLabel": "Skip to a key moment:",
     "invLead": "A vast material and human inheritance, now imperilled:",
     "strike": "All of it once existed, functioned, formed one generation after another. <strong>All of it, today, stands on the edge of oblivion.</strong> That is why the call can wait no longer."

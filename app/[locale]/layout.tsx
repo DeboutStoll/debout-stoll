@@ -12,7 +12,6 @@ import {
 } from '@/lib/i18n-config';
 import Nav from '@/components/Nav';
 import ScrollProgress from '@/components/ScrollProgress';
-import DataLightToggle from '@/components/DataLightToggle';
 import RevealController from '@/components/RevealController';
 import PwaRegister from '@/components/PwaRegister';
 import Analytics from '@/components/Analytics';
@@ -98,7 +97,6 @@ export default function LocaleLayout({
           <ScrollProgress />
           <Nav />
           <main id="content">{children}</main>
-          <DataLightToggle />
           <RevealController />
           <PwaRegister />
           <Analytics />

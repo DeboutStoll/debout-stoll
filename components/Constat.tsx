@@ -59,7 +59,31 @@ export default function Constat() {
         </div>
 
         <h2 className="sec-title" style={{ marginTop: 40 }}>{t('title')}</h2>
-        <RichText as="p" className="constat-lead" path="constat.lead" />
+        <div className="constat-intro">
+          <p className="constat-hook">{t('leadHook')}</p>
+          <p className="constat-body">{t('leadBody')}</p>
+          <div className="constat-contrast">
+            <div className="cc-then">
+              <span className="cc-label">{t('thenLabel')}</span>
+              <div className="cc-chips">
+                {t('thenStates')
+                  .split('·')
+                  .map((s) => (
+                    <span className="cc-chip" key={s}>
+                      {s.trim()}
+                    </span>
+                  ))}
+              </div>
+            </div>
+            <div className="cc-arrow" aria-hidden="true">
+              →
+            </div>
+            <div className="cc-now">
+              <span className="cc-label cc-label-now">{t('nowLabel')}</span>
+              <b>{t('leadStrike')}</b>
+            </div>
+          </div>
+        </div>
 
         <figure className="constat-video" ref={figureRef}>
           <div className="cv-frame">
