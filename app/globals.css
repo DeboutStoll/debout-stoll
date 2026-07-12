@@ -736,10 +736,16 @@ img,video,iframe{max-width:100%}
 /* =====================================================================
    SOCIAL — Facebook group action + footer channels
    ===================================================================== */
-.jbtn-fb{background:rgba(24,119,242,.14);color:var(--bone);border:1px solid rgba(24,119,242,.5)}
-.jbtn-fb:hover{background:rgba(24,119,242,.28);transform:translateY(-2px)}
-.jbtn-fb .fb-glyph{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:5px;
-  background:#1877F2;color:#fff;font-weight:800;font-family:Georgia,"Times New Roman",serif;font-size:.95rem}
+.jbtn-fb{background:#1877F2;color:#fff;border:1px solid #1877F2;font-weight:700;font-size:1rem;
+  padding:16px 28px;box-shadow:0 12px 30px -10px rgba(24,119,242,.75);
+  animation:fbPulse 2.6s ease-in-out infinite}
+.jbtn-fb:hover{background:#0f66d8;color:#fff;transform:translateY(-3px);
+  box-shadow:0 18px 40px -12px rgba(24,119,242,.85);animation:none}
+@keyframes fbPulse{0%,100%{box-shadow:0 12px 30px -10px rgba(24,119,242,.55)}
+  50%{box-shadow:0 12px 34px -8px rgba(24,119,242,.95)}}
+.jbtn-fb .fb-glyph{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;
+  background:#fff;color:#1877F2;font-weight:800;font-family:Georgia,"Times New Roman",serif;font-size:1.05rem}
+@media(prefers-reduced-motion:reduce){.jbtn-fb{animation:none}}
 
 footer .social-row{margin-top:22px;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
 footer .social-row span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-dim)}
