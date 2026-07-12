@@ -1,12 +1,20 @@
-import Image from 'next/image';
 import { useMessages, useTranslations } from 'next-intl';
 import { RichText } from './RichText';
 import LightboxImage from './LightboxImage';
+import ImageCarousel, { type CarouselImage } from './ImageCarousel';
 
 // Section II — L'église: the jewel that gave the place its soul.
 export default function EgliseFeature() {
   const t = useTranslations('eglise');
   const messages = useMessages() as { eglise: Record<string, string> };
+
+  // The archive photographs, as a carousel. The two feature frames below
+  // (façade today, 23 Feb 1969 inauguration) stay in place.
+  const archive: CarouselImage[] = [
+    { id: 'strip1', src: '/img/stoll-chantier.jpg', alt: "Le Père Stoll sur le chantier de l'église", caption: messages.eglise.strip1 },
+    { id: 'strip2', src: '/img/allee-fete.jpg', alt: "Fidèles entrant dans l'église lors d'une fête", caption: messages.eglise.strip2 },
+    { id: 'strip3', src: '/img/facade-1937.jpg', alt: "Façade de l'église lors d'une fête 1937", caption: messages.eglise.strip3 },
+  ];
 
   return (
     <section id="eglise">
@@ -36,25 +44,8 @@ export default function EgliseFeature() {
           </figure>
         </div>
 
-        <div className="archive-strip">
-          <figure>
-            <div className="ph">
-              <Image src="/img/stoll-chantier.jpg" alt="Le Père Stoll sur le chantier de l'église" width={500} height={625} />
-            </div>
-            <RichText as="figcaption" path="eglise.strip1" />
-          </figure>
-          <figure>
-            <div className="ph">
-              <Image src="/img/allee-fete.jpg" alt="Fidèles entrant dans l'église lors d'une fête" width={500} height={625} />
-            </div>
-            <RichText as="figcaption" path="eglise.strip2" />
-          </figure>
-          <figure>
-            <div className="ph">
-              <Image src="/img/facade-1937.jpg" alt="Façade de l'église lors d'une fête 1937" width={500} height={625} />
-            </div>
-            <RichText as="figcaption" path="eglise.strip3" />
-          </figure>
+        <div style={{ marginTop: 40 }}>
+          <ImageCarousel items={archive} ariaLabel={t('title')} aspect="3 / 2" fit="contain" />
         </div>
 
         <div className="feature rev" style={{ marginTop: 52 }}>

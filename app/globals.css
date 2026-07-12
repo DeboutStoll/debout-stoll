@@ -647,3 +647,68 @@ img,video,iframe{max-width:100%}
   .carousel-caption{font-size:.86rem;padding:16px 16px 18px}
   .carousel-thumb{width:72px;height:48px}
 }
+
+/* =====================================================================
+   FILM INTRO — embedded Remotion Player (opening titles)
+   ===================================================================== */
+.film-intro{position:relative;background:#000;border-bottom:1px solid var(--line)}
+.film-intro-inner{position:relative;width:100%;margin:0 auto;aspect-ratio:16/9;
+  max-height:88vh;max-width:calc(88vh * 16 / 9);background:#000;overflow:hidden;
+  box-shadow:0 40px 120px -50px #000}
+.film-intro-inner :is(.remotion-player, div){outline:none}
+.film-intro-loading{position:absolute;inset:0;
+  background:radial-gradient(900px 620px at 50% 45%, rgba(176,85,47,.18), transparent 60%), #050403}
+.film-intro-cue{display:block;text-align:center;color:var(--bone-dim);font-size:.72rem;
+  letter-spacing:.28em;text-transform:uppercase;padding:15px;text-decoration:none;background:#000;
+  transition:color .3s}
+.film-intro-cue:hover{color:var(--gold-soft)}
+
+/* =====================================================================
+   CARD CAROUSEL — inventory & anecdotes (same mechanism as image carousel)
+   ===================================================================== */
+.cardcar{position:relative;margin-top:26px}
+.cardcar-stage{position:relative;min-height:300px;border:1px solid var(--line-strong);border-radius:8px;
+  overflow:hidden;background:linear-gradient(180deg,var(--ink-2),var(--paper-2));
+  box-shadow:0 30px 80px -44px #000;display:grid}
+.cardcar-slide{grid-area:1/1;position:relative;display:flex;align-items:center;justify-content:center;
+  padding:52px 92px;cursor:grab;text-align:center;will-change:transform,opacity,filter}
+.cardcar-slide:active{cursor:grabbing}
+
+/* inventory cards */
+.cardcar-inventory .cardcar-stage{background:
+  radial-gradient(700px 380px at 80% 0%, rgba(176,85,47,.14), transparent 60%),
+  linear-gradient(180deg,var(--ink-2),var(--paper-2))}
+.inv-card{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:560px}
+.inv-card-num{font-size:.78rem;letter-spacing:.34em;color:var(--laterite-2);font-weight:600}
+.inv-card-ic{font-size:4.2rem;line-height:1;filter:drop-shadow(0 8px 18px rgba(0,0,0,.55))}
+.inv-card b{color:var(--bone);font-size:1.7rem;line-height:1.15}
+.inv-card-detail{color:var(--bone-dim);font-size:1.08rem;max-width:44ch}
+
+/* anecdote cards — film-narrative rendering */
+.cardcar-anecdote .cardcar-stage{min-height:340px;background:
+  radial-gradient(820px 420px at 18% 0%, rgba(138,61,36,.2), transparent 60%),
+  linear-gradient(180deg,var(--ink-2),var(--paper-2))}
+.anec-card{max-width:780px;position:relative}
+.anec-card-num{display:block;font-size:3.6rem;font-weight:800;color:transparent;line-height:1;
+  -webkit-text-stroke:1.5px rgba(201,162,75,.28);margin-bottom:2px}
+.anec-card-kicker{font-size:.72rem;letter-spacing:.36em;text-transform:uppercase;color:var(--laterite-2);font-weight:600}
+.anec-card h4{color:var(--gold-soft);font-size:2rem;margin:12px 0 16px;line-height:1.15}
+.anec-card p{color:var(--bone-dim);font-size:1.18rem;line-height:1.62}
+
+/* dots */
+.cardcar-dots{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.cardcar-dot{width:9px;height:9px;border-radius:50%;border:1px solid var(--line-strong);
+  background:transparent;cursor:pointer;padding:0;transition:background .3s,transform .3s,border-color .3s}
+.cardcar-dot:hover{background:rgba(201,162,75,.3)}
+.cardcar-dot.active{background:var(--gold);border-color:var(--gold);transform:scale(1.25)}
+
+@media(max-width:640px){
+  .cardcar-slide{padding:40px 54px}
+  .inv-card-ic{font-size:3.2rem}
+  .inv-card b{font-size:1.35rem}
+  .inv-card-detail{font-size:.98rem}
+  .anec-card-num{font-size:2.8rem}
+  .anec-card h4{font-size:1.45rem}
+  .anec-card p{font-size:1.02rem}
+  .film-intro-inner{max-height:none}
+}

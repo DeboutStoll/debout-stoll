@@ -2,14 +2,24 @@ import { useLocale, useTranslations } from 'next-intl';
 import type { Locale } from '@/lib/i18n-config';
 import { figures } from '@/content/figures';
 import { t as tr } from '@/content/types';
-import { Html } from './Html';
 import { RichText } from './RichText';
-import LightboxImage from './LightboxImage';
+import ImageCarousel, { type CarouselImage } from './ImageCarousel';
 
-// Section III — Figures: the pantheon. Driven entirely by content/figures.ts.
+// Section III — Figures: the pantheon, as a cinematic carousel of portraits.
 export default function Pantheon() {
   const locale = useLocale() as Locale;
   const t = useTranslations('figures');
+
+  const items: CarouselImage[] = figures
+    .filter((f) => f.image)
+    .map((f) => ({
+      id: f.id,
+      src: f.image as string,
+      alt: tr(f.imageAlt, locale),
+      caption:
+        `<b>${f.name}</b> · ${tr(f.role, locale)}<br>` +
+        `<span style="color:var(--gold-soft);font-style:italic">${tr(f.dates, locale)}</span> — ${tr(f.bio, locale)}`,
+    }));
 
   return (
     <section id="figures">
@@ -20,31 +30,12 @@ export default function Pantheon() {
         <h2 className="sec-title">{t('title')}</h2>
         <RichText as="p" className="sec-intro" path="figures.intro" />
 
-        <div className="people">
-          {figures.map((f) => (
-            <div className="card" key={f.id}>
-              <div className={`portrait${f.image ? '' : ' empty'}`}>
-                <span className={`badge ${f.badgeKind}`}>{tr(f.badge, locale)}</span>
-                {f.image && (
-                  <LightboxImage
-                    src={f.image}
-                    alt={tr(f.imageAlt, locale)}
-                    width={300}
-                    height={300}
-                    sizes="(max-width: 520px) 100vw, 224px"
-                    caption={`<b>${f.name}</b> — ${tr(f.role, locale)} · ${tr(f.dates, locale)}`}
-                  />
-                )}
-              </div>
-              <div className="card-body">
-                <span className="role">{tr(f.role, locale)}</span>
-                <h4>{f.name}</h4>
-                <span className="dates">{tr(f.dates, locale)}</span>
-                <Html as="p" html={tr(f.bio, locale)} />
-              </div>
-            </div>
-          ))}
-        </div>
+        <ImageCarousel
+          items={items}
+          ariaLabel={t('title')}
+          aspect="3 / 2"
+          fit="contain"
+        />
       </div>
     </section>
   );

@@ -11,7 +11,6 @@ import {
   type Locale,
 } from '@/lib/i18n-config';
 import Nav from '@/components/Nav';
-import CineIntro from '@/components/CineIntro';
 import ScrollProgress from '@/components/ScrollProgress';
 import DataLightToggle from '@/components/DataLightToggle';
 import RevealController from '@/components/RevealController';
@@ -96,18 +95,6 @@ export default function LocaleLayout({
           <a className="skip-link" href="#content">
             {locale === 'en' ? 'Skip to content' : 'Aller au contenu'}
           </a>
-          <CineIntro
-            presents={
-              locale === 'en'
-                ? 'The alumni network presents'
-                : "Le réseau des anciens présente"
-            }
-            tagline={
-              locale === 'en'
-                ? 'Seminary · Mission · College'
-                : 'Séminaire · Mission · Collège'
-            }
-          />
           <ScrollProgress />
           <Nav />
           <main id="content">{children}</main>

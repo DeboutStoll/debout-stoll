@@ -3,6 +3,7 @@ import type { Locale } from '@/lib/i18n-config';
 import { quotes, anecdotes } from '@/content/quotes';
 import { t as tr } from '@/content/types';
 import { Html } from './Html';
+import CardCarousel from './CardCarousel';
 
 // Section IV — La voix: founding quotes, anecdotes and the SOS block.
 export default function Voix() {
@@ -25,14 +26,24 @@ export default function Voix() {
           </figure>
         ))}
 
-        <div className="anecdotes">
-          {anecdotes.map((a) => (
-            <div className="anec" key={a.id}>
-              <h4>{tr(a.title, locale)}</h4>
-              <p>{tr(a.body, locale)}</p>
-            </div>
-          ))}
-        </div>
+        <CardCarousel
+          ariaLabel={locale === 'en' ? 'Anecdotes' : 'Anecdotes'}
+          variant="cardcar-anecdote"
+          autoplayMs={8000}
+          slides={anecdotes.map((a, i) => ({
+            id: a.id,
+            node: (
+              <div className="anec-card">
+                <span className="anec-card-num">{String(i + 1).padStart(2, '0')}</span>
+                <span className="anec-card-kicker">
+                  {locale === 'en' ? 'A story' : 'Un récit'}
+                </span>
+                <h4>{tr(a.title, locale)}</h4>
+                <p>{tr(a.body, locale)}</p>
+              </div>
+            ),
+          }))}
+        />
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ import { t as tr } from '@/content/types';
 import { Html } from './Html';
 import { RichText } from './RichText';
 import { Transcript } from './Videos';
+import CardCarousel from './CardCarousel';
 
 // Section VIII — Le constat: the 16-minute testimony with clickable chapters.
 export default function Constat() {
@@ -100,19 +101,23 @@ export default function Constat() {
         </div>
 
         <p className="constat-lead" style={{ marginTop: 34 }} dangerouslySetInnerHTML={{ __html: t('invLead') }} />
-        <div className="constat-inventory">
-          {inventory.map((item) => (
-            <div className="inv" key={item.id}>
-              <span className="ic" aria-hidden="true">
-                {item.icon}
-              </span>
-              <div>
+        <CardCarousel
+          ariaLabel={locale === 'en' ? 'Patrimony at risk' : 'Patrimoine en péril'}
+          variant="cardcar-inventory"
+          slides={inventory.map((item, i) => ({
+            id: item.id,
+            node: (
+              <div className="inv-card">
+                <span className="inv-card-num">{String(i + 1).padStart(2, '0')}</span>
+                <span className="inv-card-ic" aria-hidden="true">
+                  {item.icon}
+                </span>
                 <b>{tr(item.title, locale)}</b>
-                <span>{tr(item.detail, locale)}</span>
+                <span className="inv-card-detail">{tr(item.detail, locale)}</span>
               </div>
-            </div>
-          ))}
-        </div>
+            ),
+          }))}
+        />
 
         <div className="constat-strike">
           <RichText as="p" path="constat.strike" />

@@ -24,16 +24,16 @@ export const videos: VideoItem[] = [
       '<p><em>A faithful English description of the film’s content (the narration is in French; no verified transcript is available). Turn on the video’s CC button for any auto-translated captions.</em></p>',
   },
   {
-    id: 'akono-sky',
+    id: 'centre-artistique',
     youtubeId: 'wAgNCMe1OeY',
-    title: { fr: 'Akono vue du ciel', en: 'Akono from the sky' },
+    title: { fr: 'Centre Artistique du collège Stoll', en: 'The Arts Centre of Collège Stoll' },
     caption: {
-      fr: '<b>Akono vue du ciel.</b> Vue aérienne de la ville et du domaine de la mission. En plein cours de musique au centre artistique du collège Stoll d\'Akono.',
-      en: '<b>Akono from the sky.</b> An aerial view of the town and the estate of the mission — and a music lesson under way at the arts centre of Collège Stoll d\'Akono.',
+      fr: '<b>Centre Artistique du collège Stoll.</b> En plein cours de musique au centre artistique du collège Stoll d\'Akono.',
+      en: '<b>The Arts Centre of Collège Stoll.</b> A music lesson under way at the arts centre of Collège Stoll d\'Akono.',
     },
     transcriptEn:
-      '<p>Aerial footage carries the eye over the town of Akono and the mission estate. From above, the dome bell tower of Our Lady of the Seven Sorrows stands out against the forest canopy — the silhouette that has marked the Beti landscape since 1938.</p>' +
-      '<p>The drone follows the fourteen-hectare grounds: the two campuses, the boarding houses, and the broad sports complex, all held within a sea of green. The film also carries us inside the arts centre, where a music lesson is under way — the living present of a school still teaching.</p>' +
+      '<p>Inside the arts centre of Collège Stoll d’Akono — the great hall that seats 2,500 — a music lesson is under way. Young musicians rehearse together, instruments in hand, under their teacher’s guidance.</p>' +
+      '<p>It is a scene of the school’s living present: for all that the estate has suffered, teaching goes on, and the arts still have a home here. The images set that fragile continuity against the scale of the hall around them.</p>' +
       '<p><em>A faithful English description of the film’s content (no captions are available for this film).</em></p>',
   },
   {

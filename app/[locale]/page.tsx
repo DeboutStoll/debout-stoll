@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { siteUrl } from '@/lib/i18n-config';
+import FilmIntro from '@/components/FilmIntro';
 import Hero from '@/components/Hero';
 import Timeline from '@/components/Timeline';
 import EgliseFeature from '@/components/EgliseFeature';
@@ -44,6 +45,7 @@ export default async function HomePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <FilmIntro />
       <Hero />
       <Timeline />
       <EgliseFeature />
