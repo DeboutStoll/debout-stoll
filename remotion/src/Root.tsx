@@ -1,6 +1,6 @@
 import React from 'react';
 import { Composition } from 'remotion';
-import { AkonoTitle } from './AkonoTitle';
+import { AkonoTitle, AKONO_DURATION } from './AkonoTitle';
 import { StatDecline } from './StatDecline';
 
 // Registered compositions — visible in Remotion Studio and renderable by id.
@@ -10,7 +10,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="AkonoTitle"
         component={AkonoTitle}
-        durationInFrames={270}
+        durationInFrames={AKONO_DURATION}
         fps={30}
         width={1920}
         height={1080}

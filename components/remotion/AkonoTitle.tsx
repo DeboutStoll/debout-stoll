@@ -9,7 +9,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import { COLORS, SERIF } from './theme';
-import { FilmGrain, Vignette } from './Layers';
+import { Embers, FilmGrain, Vignette } from './Layers';
 
 export type AkonoTitleProps = {
   presents: string;
@@ -17,8 +17,12 @@ export type AkonoTitleProps = {
   crestSrc?: string;
 };
 
-// The AKONO cold-open, enhanced with real CSS-3D depth (perspective scene,
-// rotating crest, extruded title). Rendered live in-page by @remotion/player.
+export const AKONO_DURATION = 450; // 15s @ 30fps
+
+// The AKONO cold-open — a longer, more dramatic build: black to embers, the
+// crest rises from deep in 3D with a sheen sweep, AKONO resolves from heavy
+// blur with a swelling glow and a slow camera push, the rule draws, the
+// tagline lands, then the frame fades as the letterbox parts.
 export const AkonoTitle: React.FC<AkonoTitleProps> = ({
   presents,
   tagline,
@@ -29,62 +33,88 @@ export const AkonoTitle: React.FC<AkonoTitleProps> = ({
   const ease = Easing.bezier(0.16, 1, 0.3, 1);
   const clamp = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;
 
-  const barH = 13;
-  const barIn = interpolate(frame, [0, 16], [100, 0], { ...clamp, easing: ease });
-  const barOut = interpolate(frame, [250, 270], [0, 100], { ...clamp, easing: ease });
+  // Deep, slow letterbox (a wider, more cinematic ratio).
+  const barH = 15;
+  const barIn = interpolate(frame, [0, 26], [100, 0], { ...clamp, easing: ease });
+  const barOut = interpolate(frame, [420, 450], [0, 100], { ...clamp, easing: ease });
   const barOffset = barIn + barOut;
 
-  // Crest — springs up and rotates gently in 3D.
-  const crestSpring = spring({ frame: frame - 12, fps, config: { damping: 200, mass: 0.8 } });
-  const crestOpacity = interpolate(frame, [12, 44], [0, 1], clamp);
-  const crestScale = interpolate(crestSpring, [0, 1], [0.6, 1]);
-  const crestRotateY = interpolate(frame, [12, 150], [40, -10], { ...clamp, easing: ease });
-  const crestZ = interpolate(crestSpring, [0, 1], [-260, 60]);
+  // Ambient ember glow rises out of black.
+  const glowOpacity = interpolate(frame, [0, 70], [0, 1], clamp);
+  const emberOpacity = interpolate(frame, [30, 90, 410, 445], [0, 1, 1, 0], clamp);
 
-  const presentsOpacity = interpolate(frame, [30, 60, 232, 250], [0, 1, 1, 0], clamp);
+  // "presents" line.
+  const presentsOpacity = interpolate(frame, [38, 78, 150, 180], [0, 1, 1, 0], clamp);
 
-  const akOpacity = interpolate(frame, [50, 88], [0, 1], { ...clamp, easing: ease });
-  const akBlur = interpolate(frame, [50, 92], [22, 0], { ...clamp, easing: ease });
-  const akSpacing = interpolate(frame, [50, 96, 250, 270], [52, 20, 20, 32], { ...clamp, easing: ease });
-  const akGlow = interpolate(frame, [70, 112], [0, 48], clamp);
-  const akZ = interpolate(frame, [50, 96], [-160, 0], { ...clamp, easing: ease });
+  // Crest — springs up from deep Z, rotates in 3D, with a sheen sweep.
+  const crestSpring = spring({ frame: frame - 80, fps, config: { damping: 200, mass: 1 } });
+  const crestOpacity = interpolate(frame, [80, 120], [0, 1], clamp);
+  const crestScale = interpolate(crestSpring, [0, 1], [0.55, 1]);
+  const crestRotateY = interpolate(frame, [80, 300], [42, -8], { ...clamp, easing: ease });
+  const crestZ = interpolate(crestSpring, [0, 1], [-340, 60]);
+  const sheenX = interpolate(frame, [140, 205], [-140, 160], { ...clamp, easing: ease });
+  const sheenOpacity = interpolate(frame, [140, 160, 190, 205], [0, 0.5, 0.5, 0], clamp);
 
-  const ruleW = interpolate(frame, [102, 138], [0, 560], { ...clamp, easing: ease });
-  const tagOpacity = interpolate(frame, [138, 178, 242, 264], [0, 1, 1, 0], clamp);
+  // AKONO resolves — slow, heavy blur → sharp, swelling glow.
+  const akOpacity = interpolate(frame, [150, 214], [0, 1], { ...clamp, easing: ease });
+  const akBlur = interpolate(frame, [150, 224], [28, 0], { ...clamp, easing: ease });
+  const akSpacing = interpolate(frame, [150, 232, 410, 450], [64, 22, 22, 36], { ...clamp, easing: ease });
+  const akGlow = interpolate(frame, [190, 280], [0, 56], clamp);
+  const akZ = interpolate(frame, [150, 232], [-240, 0], { ...clamp, easing: ease });
 
-  const fadeOut = interpolate(frame, [252, 270], [1, 0], clamp);
+  const ruleW = interpolate(frame, [250, 300], [0, 600], { ...clamp, easing: ease });
+  const tagOpacity = interpolate(frame, [300, 350, 405, 430], [0, 1, 1, 0], clamp);
 
-  // Whole scene breathes with a slow parallax tilt.
-  const sceneRotX = interpolate(frame, [0, 270], [4, -3], clamp);
-  const sceneRotY = Math.sin(frame / 60) * 2;
+  const fadeOut = interpolate(frame, [424, 450], [1, 0], clamp);
+
+  // Slow cinematic camera push + breathing tilt over the whole take.
+  const push = interpolate(frame, [0, 450], [1, 1.1], clamp);
+  const sceneRotX = interpolate(frame, [0, 450], [5, -4], clamp);
+  const sceneRotY = Math.sin(frame / 70) * 2.4;
 
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.paper, fontFamily: SERIF }}>
       <AbsoluteFill
-        style={{ background: 'radial-gradient(1000px 680px at 50% 42%, rgba(176,85,47,.2), transparent 60%)' }}
+        style={{
+          opacity: glowOpacity,
+          background: 'radial-gradient(1100px 720px at 50% 42%, rgba(176,85,47,.24), transparent 62%)',
+        }}
       />
+      <Embers count={30} opacity={emberOpacity} />
 
-      <AbsoluteFill style={{ opacity: fadeOut, perspective: 1600, perspectiveOrigin: '50% 42%' }}>
+      <AbsoluteFill style={{ opacity: fadeOut, perspective: 1700, perspectiveOrigin: '50% 42%' }}>
         <AbsoluteFill
           style={{
             alignItems: 'center',
             justifyContent: 'center',
             flexDirection: 'column',
             transformStyle: 'preserve-3d',
-            transform: `rotateX(${sceneRotX}deg) rotateY(${sceneRotY}deg)`,
+            transform: `scale(${push}) rotateX(${sceneRotX}deg) rotateY(${sceneRotY}deg)`,
           }}
         >
           <div
             style={{
+              position: 'relative',
               transform: `translateZ(${crestZ}px) rotateY(${crestRotateY}deg) scale(${crestScale})`,
               opacity: crestOpacity,
-              marginBottom: 24,
+              marginBottom: 26,
               transformStyle: 'preserve-3d',
             }}
           >
             <Img
               src={crestSrc}
-              style={{ width: 150, height: 'auto', filter: 'drop-shadow(0 18px 40px rgba(0,0,0,.7))' }}
+              style={{ width: 156, height: 'auto', filter: 'drop-shadow(0 20px 44px rgba(0,0,0,.72))' }}
+            />
+            {/* sheen sweep */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                opacity: sheenOpacity,
+                background: `linear-gradient(115deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%)`,
+                transform: `translateX(${sheenX}px)`,
+                mixBlendMode: 'screen',
+              }}
             />
           </div>
 
@@ -92,7 +122,7 @@ export const AkonoTitle: React.FC<AkonoTitleProps> = ({
             style={{
               opacity: presentsOpacity,
               color: COLORS.boneDim,
-              letterSpacing: 14,
+              letterSpacing: 15,
               textTransform: 'uppercase',
               fontSize: 22,
               fontWeight: 600,
@@ -106,13 +136,13 @@ export const AkonoTitle: React.FC<AkonoTitleProps> = ({
               opacity: akOpacity,
               filter: `blur(${akBlur}px)`,
               color: COLORS.gold,
-              fontSize: 200,
+              fontSize: 210,
               fontWeight: 800,
               letterSpacing: akSpacing,
               marginTop: 6,
               lineHeight: 1,
               transform: `translateZ(${akZ}px)`,
-              textShadow: `0 1px 0 #8a3d24, 0 2px 0 #6f3016, 0 3px 1px rgba(0,0,0,.4), 0 0 ${akGlow}px rgba(201,162,75,.6)`,
+              textShadow: `0 1px 0 #8a3d24, 0 2px 0 #6f3016, 0 4px 2px rgba(0,0,0,.45), 0 0 ${akGlow}px rgba(201,162,75,.65)`,
             }}
           >
             AKONO
@@ -122,7 +152,7 @@ export const AkonoTitle: React.FC<AkonoTitleProps> = ({
             style={{
               height: 2,
               width: ruleW,
-              marginTop: 30,
+              marginTop: 32,
               background: `linear-gradient(90deg, transparent, ${COLORS.gold}, transparent)`,
             }}
           />
@@ -134,7 +164,7 @@ export const AkonoTitle: React.FC<AkonoTitleProps> = ({
               letterSpacing: 12,
               textTransform: 'uppercase',
               fontSize: 26,
-              marginTop: 24,
+              marginTop: 26,
             }}
           >
             {tagline}

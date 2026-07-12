@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { useLocale } from 'next-intl';
-import { AkonoTitle } from './remotion/AkonoTitle';
+import { AkonoTitle, AKONO_DURATION } from './remotion/AkonoTitle';
 
 // Player is browser-only.
 const Player = dynamic(() => import('@remotion/player').then((m) => m.Player), {
@@ -21,7 +21,7 @@ export default function FilmIntro() {
       <div className="film-intro-inner">
         <Player
           component={AkonoTitle}
-          durationInFrames={270}
+          durationInFrames={AKONO_DURATION}
           fps={30}
           compositionWidth={1920}
           compositionHeight={1080}
