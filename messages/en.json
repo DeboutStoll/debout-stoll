@@ -19,7 +19,8 @@
   },
   "cta": {
     "join": "Join the network",
-    "contribute": "Entrust a photograph or a memory"
+    "contribute": "Entrust a photograph or a memory",
+    "facebookGroup": "Join the Facebook group"
   },
   "hero": {
     "eyebrow": "Heritage archive · Akono, Cameroon",
@@ -130,7 +131,8 @@
     "sig": "Heritage archive · forever a work in progress",
     "join": "Answer the call",
     "contribute": "Contribute to the memory",
-    "credits": "Credits & legal notice"
+    "credits": "Credits & legal notice",
+    "follow": "Follow us"
   },
   "common": {
     "backHome": "← Back to home",

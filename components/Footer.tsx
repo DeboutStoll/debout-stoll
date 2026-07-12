@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
+import { activeSocials, social, socialMeta } from '@/content/social';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -19,6 +20,26 @@ export default function Footer() {
           />
         </div>
         <p>{t('tagline')}</p>
+
+        {activeSocials.length > 0 && (
+          <div className="social-row">
+            <span>{t('follow')}</span>
+            {activeSocials.map((key) => (
+              <a
+                key={key}
+                className="social-btn"
+                href={social[key]}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={socialMeta[key].label}
+                title={socialMeta[key].label}
+              >
+                {socialMeta[key].glyph}
+              </a>
+            ))}
+          </div>
+        )}
+
         <div className="flinks">
           <a href={`${base}#rejoindre`}>{t('join')}</a>
           <Link href={`${base}/contribuer`}>{t('contribute')}</Link>

@@ -732,3 +732,18 @@ img,video,iframe{max-width:100%}
   .constat-contrast{grid-template-columns:1fr;gap:16px}
   .cc-arrow{transform:rotate(90deg);justify-self:start;margin:2px 0}
 }
+
+/* =====================================================================
+   SOCIAL — Facebook group action + footer channels
+   ===================================================================== */
+.jbtn-fb{background:rgba(24,119,242,.14);color:var(--bone);border:1px solid rgba(24,119,242,.5)}
+.jbtn-fb:hover{background:rgba(24,119,242,.28);transform:translateY(-2px)}
+.jbtn-fb .fb-glyph{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:5px;
+  background:#1877F2;color:#fff;font-weight:800;font-family:Georgia,"Times New Roman",serif;font-size:.95rem}
+
+footer .social-row{margin-top:22px;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+footer .social-row span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-dim)}
+.social-btn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line-strong);color:var(--gold-soft);text-decoration:none;font-size:.95rem;font-weight:700;
+  transition:background .3s,transform .25s,color .3s}
+.social-btn:hover{background:var(--laterite);color:#fff;transform:translateY(-2px) scale(1.05);border-color:var(--laterite-2)}

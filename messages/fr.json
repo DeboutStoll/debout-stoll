@@ -19,7 +19,8 @@
   },
   "cta": {
     "join": "Adhérer au réseau",
-    "contribute": "Confier une photo, un souvenir"
+    "contribute": "Confier une photo, un souvenir",
+    "facebookGroup": "Rejoindre le groupe Facebook"
   },
   "hero": {
     "eyebrow": "Médiathèque du patrimoine · Akono, Cameroun",
@@ -130,7 +131,8 @@
     "sig": "Médiathèque du patrimoine · en construction permanente",
     "join": "Rejoindre l'appel",
     "contribute": "Contribuer à la mémoire",
-    "credits": "Crédits & mentions légales"
+    "credits": "Crédits & mentions légales",
+    "follow": "Suivez-nous"
   },
   "common": {
     "backHome": "← Retour à l'accueil",

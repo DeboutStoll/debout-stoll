@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import { social } from '@/content/social';
 import { RichText } from './RichText';
 import StatsCounter from './StatsCounter';
 import JoinForm from './JoinForm';
@@ -31,6 +32,17 @@ export default function Rejoindre() {
             <div className="join-actions">
               <a className="jbtn jbtn-primary" href="#adhesion">
                 ✎&nbsp; {cta('join')}
+              </a>
+              <a
+                className="jbtn jbtn-fb"
+                href={social.facebookGroup}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="fb-glyph" aria-hidden="true">
+                  f
+                </span>
+                {cta('facebookGroup')}
               </a>
               <Link className="jbtn jbtn-ghost" href={`/${locale}/contribuer`}>
                 📸&nbsp; {cta('contribute')}
