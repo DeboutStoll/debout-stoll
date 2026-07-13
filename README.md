@@ -68,6 +68,23 @@ docker build -t debout-stoll . && docker run -p 3000:3000 --env-file .env.local 
 
 ---
 
+## 📚 Guides de déploiement (`debout-stoll.com`)
+
+Tout ce qu'il faut pour passer du local à la production, du plus rapide au plus détaillé :
+
+| Guide | À quoi il sert |
+|---|---|
+| **[GO-LIVE.md](./GO-LIVE.md)** · [🇬🇧 EN](./GO-LIVE.en.md) | **Commencez ici.** Runbook condensé, étape par étape avec cases à cocher (sécurité → Supabase → Resend → Vercel → DNS → vérification). |
+| **[WALKTHROUGH-SUPABASE-RESEND.md](./WALKTHROUGH-SUPABASE-RESEND.md)** | Création des comptes backend, écran par écran → produit les 3 secrets (`SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`). |
+| **[WALKTHROUGH-VERCEL.md](./WALKTHROUGH-VERCEL.md)** | Déploiement Vercel + domaine, écran par écran (import, Root Directory, variables, DNS, HTTPS). |
+| **[DEPLOIEMENT.md](./DEPLOIEMENT.md)** | Référence complète : variables, scalabilité/cache mondial, Docker/auto-hébergement, supervision, modération. |
+| **[supabase/schema.sql](./supabase/schema.sql)** | Schéma base prêt à coller (tables + index + RLS + bucket), idempotent. |
+| **[.env.example](./.env.example)** | Référence de toutes les variables d'environnement. |
+
+**Ordre conseillé :** Supabase/Resend → Vercel → DNS Namecheap (GO-LIVE §4) → checklist de vérification.
+
+---
+
 ## 🗂️ Architecture
 
 ```
@@ -84,9 +101,11 @@ sos-stoll/
 ├─ messages/              fr.json · en.json          (chaînes d'interface)
 ├─ lib/                   db.ts · email.ts · security.ts · i18n-config.ts
 ├─ public/img/            photos d'archives extraites de la page originale
+├─ supabase/schema.sql    schéma base prêt à coller (idempotent)
 ├─ legacy/index.html      page statique d'origine, conservée intacte
 ├─ Dockerfile · docker-compose.yml
-└─ DEPLOIEMENT.md
+└─ GO-LIVE.md · GO-LIVE.en.md · WALKTHROUGH-VERCEL.md
+   WALKTHROUGH-SUPABASE-RESEND.md · DEPLOIEMENT.md   (guides de déploiement)
 ```
 
 ## ✍️ Ajouter une figure / une photo sans coder
@@ -134,8 +153,13 @@ cd sos-stoll && npm install && npm run dev   # → http://localhost:3000
 
 With no environment variables the app is fully functional: memberships and
 contributions go to a local JSON store, emails are logged to the console, and
-captcha/analytics stay off. To wire up the real services and go to production,
-see **[DEPLOIEMENT.md](./DEPLOIEMENT.md)**.
+captcha/analytics stay off.
+
+**Going to production on `debout-stoll.com`?** Start with the step-by-step
+runbook **[GO-LIVE.en.md](./GO-LIVE.en.md)**, backed by screen-by-screen guides
+for the backends (**[WALKTHROUGH-SUPABASE-RESEND.md](./WALKTHROUGH-SUPABASE-RESEND.md)**)
+and Vercel (**[WALKTHROUGH-VERCEL.md](./WALKTHROUGH-VERCEL.md)**). Full reference:
+**[DEPLOIEMENT.md](./DEPLOIEMENT.md)**.
 
 **Add a figure or photo without coding:** drop an image in `public/img/` and add
 a bilingual entry to `content/figures.ts` or `content/gallery.ts`.
