@@ -89,7 +89,10 @@ git config --global credential.helper store   # ou 'cache' pour un cache tempora
 
 1. **New project** sur https://supabase.com (région conseillée : **`eu-west` /
    Europe** — bon compromis latence Cameroun ↔ Europe).
-2. **SQL Editor** → exécutez :
+2. **SQL Editor → New query** → collez le contenu de **`supabase/schema.sql`**
+   (fichier prêt à l'emploi, idempotent : il crée les tables, index, RLS **et**
+   le bucket de stockage) → *Run*. Le SQL est également reproduit ci-dessous
+   pour référence :
 
 ```sql
 -- Table des adhésions
