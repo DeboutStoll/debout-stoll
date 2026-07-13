@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Debout, Stoll ! — Guide de mise en ligne</title>
+<style>
+  :root{
+    --ink:#1c1712; --ink-soft:#4a4038; --line:#e2d8c8;
+    --gold:#9a7b1e; --gold-bg:#faf3e0; --laterite:#a4441f; --laterite-bg:#fbeee7;
+    --moss:#4a5d3a; --paper:#0f0c0a;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{margin:0;color:var(--ink);
+    font-family:"Segoe UI",Calibri,Helvetica,Arial,sans-serif;font-size:11pt;line-height:1.5}
+  h1,h2,h3,.brand{font-family:Georgia,"Times New Roman",serif}
+  code,pre{font-family:"Consolas","Courier New",monospace}
+
+  /* ---- cover ---- */
+  .cover{background:var(--paper);color:#e9e0d2;min-height:100vh;padding:4.5cm 2.2cm 2cm;
+    display:flex;flex-direction:column;justify-content:center;page-break-after:always}
+  .cover .kicker{letter-spacing:.42em;text-transform:uppercase;font-size:9pt;color:#c9a24b;font-weight:700}
+  .cover h1{font-size:34pt;margin:.35em 0 .1em;color:#f2ead9;line-height:1.05}
+  .cover h1 em{color:#d8bd7e;font-style:italic}
+  .cover .sub{font-size:13pt;color:#b6a894;font-style:italic;max-width:16cm}
+  .cover .dom{margin-top:1.4cm;font-size:15pt;color:#c9a24b;font-weight:700;letter-spacing:.02em}
+  .cover .meta{margin-top:.5cm;font-size:9.5pt;color:#8f8477}
+  .cover .stack{margin-top:1.2cm;border-top:1px solid rgba(201,162,75,.35);padding-top:.7cm;
+    display:grid;grid-template-columns:1fr 1fr;gap:.35cm 1cm;font-size:10pt;color:#cbbfad}
+  .cover .stack b{color:#d8bd7e;font-weight:700}
+
+  /* ---- page frame ---- */
+  .page{padding:1.4cm 1.6cm}
+  main{counter-reset:phase}
+  h2{font-size:18pt;color:var(--ink);margin:0 0 .1em;border-bottom:3px solid var(--gold);padding-bottom:.15em}
+  .phase{page-break-before:always}
+  .phase h2::before{counter-increment:phase;content:"Phase " counter(phase) " · ";color:var(--gold)}
+  h3{font-size:12.5pt;color:var(--laterite);margin:1.1em 0 .3em}
+  p{margin:.4em 0}
+  ul,ol{margin:.4em 0;padding-left:1.3em}
+  li{margin:.28em 0}
+  .lead{color:var(--ink-soft);font-size:11.5pt}
+
+  a{color:var(--gold);text-decoration:none}
+  strong{color:var(--ink)}
+
+  table{width:100%;border-collapse:collapse;margin:.6em 0;font-size:9.6pt}
+  th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+  th{background:var(--gold-bg);color:var(--ink);font-family:Georgia,serif;font-size:9.6pt}
+  td code{font-size:9pt}
+
+  pre{background:#1c1712;color:#e9e0d2;padding:9px 12px;border-radius:5px;font-size:8.8pt;
+    overflow:hidden;white-space:pre-wrap;word-break:break-word;margin:.5em 0}
+  p code,li code,td code{background:var(--gold-bg);color:#6d5512;padding:1px 5px;border-radius:3px;font-size:9pt}
+
+  .note{border-left:4px solid var(--gold);background:var(--gold-bg);padding:8px 12px;margin:.7em 0;border-radius:0 4px 4px 0}
+  .warn{border-left:4px solid var(--laterite);background:var(--laterite-bg);padding:8px 12px;margin:.7em 0;border-radius:0 4px 4px 0}
+  .note b,.warn b{font-family:Georgia,serif}
+  .warn b{color:var(--laterite)}
+
+  .step{border:1px solid var(--line);border-radius:6px;padding:.5cm .6cm;margin:.5em 0;page-break-inside:avoid}
+  .step .n{display:inline-block;background:var(--gold);color:#fff;font-weight:700;border-radius:50%;
+    width:22px;height:22px;text-align:center;line-height:22px;font-size:10pt;margin-right:8px;font-family:Georgia,serif}
+  .step h4{display:inline;font-size:11.5pt;font-family:Georgia,serif;color:var(--ink)}
+
+  .toc ol{font-size:11pt;line-height:1.9;list-style:none;padding-left:0;counter-reset:toc}
+  .toc li::before{counter-increment:toc;content:counter(toc) ".  ";color:var(--gold);font-weight:700;font-family:Georgia,serif}
+  .toc small{color:var(--ink-soft)}
+
+  .check li{list-style:none;position:relative;padding-left:1.5em}
+  .check li::before{content:"☐";position:absolute;left:0;color:var(--gold);font-size:12pt}
+
+  footer.pg{position:fixed;bottom:.5cm;left:1.6cm;right:1.6cm;font-size:8pt;color:#9a9083;
+    display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:3px}
+  @page{margin:1.1cm 0 1.2cm}
+  .kicker-sm{letter-spacing:.28em;text-transform:uppercase;font-size:8pt;color:var(--gold);font-weight:700}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <div class="kicker">Collège Stoll d'Akono · Réseau des anciens</div>
+  <h1>Debout, <em>Stoll</em> !<br>Guide de mise en ligne</h1>
+  <div class="sub">Déploiement complet, pas à pas, du site sur GitHub Pages avec le domaine Namecheap, les formulaires Zoho et le compteur Supabase.</div>
+  <div class="dom">→ https://debout-stoll.com</div>
+  <div class="meta">Document technique · Architecture statique (GitHub Pages) · Version du 13 juillet 2026</div>
+  <div class="stack">
+    <div><b>Hébergement</b><br>GitHub Pages (CDN mondial, HTTPS auto)</div>
+    <div><b>Domaine / DNS</b><br>Namecheap — debout-stoll.com</div>
+    <div><b>Formulaires</b><br>Zoho Forms (adhésion + contribution)</div>
+    <div><b>Compteur</b><br>Supabase (lecture navigateur)</div>
+    <div><b>Code source</b><br>GitHub — DeboutStoll/debout-stoll</div>
+    <div><b>Email</b><br>contact@debout-stoll.com (Zoho Mail)</div>
+  </div>
+</section>
+
+<div class="page">
+
+<!-- ============ TOC ============ -->
+<h2 style="border-color:var(--laterite)">Sommaire</h2>
+<div class="toc">
+<ol>
+  <li><b>Vue d'ensemble &amp; prérequis</b> <br><small>Comment tout s'articule et les comptes à préparer</small></li>
+  <li><b>Sécurité — à faire en premier</b> <br><small>Rotation du token, protection des secrets</small></li>
+  <li><b>Zoho Forms</b> <br><small>Créer les 2 formulaires et les relier au site</small></li>
+  <li><b>Supabase</b> <br><small>Le compteur d'adhésions en temps réel</small></li>
+  <li><b>GitHub Pages</b> <br><small>Activer et publier le site</small></li>
+  <li><b>Namecheap DNS</b> <br><small>Brancher le domaine debout-stoll.com + HTTPS</small></li>
+  <li><b>Vérification</b> <br><small>Liste de contrôle finale</small></li>
+  <li><b>Exploitation &amp; annexes</b> <br><small>Mises à jour, dépannage, commandes utiles</small></li>
+</ol>
+</div>
+
+<!-- ============ OVERVIEW ============ -->
+<div class="phase" style="page-break-before:auto">
+<h2 style="counter-increment:none"><span style="color:var(--gold)">§1 · </span>Vue d'ensemble &amp; prérequis</h2>
+<p class="lead">Le site est un <strong>site statique</strong> : des fichiers HTML/CSS/JS publiés sur le réseau mondial de GitHub Pages. Il n'y a pas de serveur applicatif — les parties « dynamiques » sont déléguées à des services externes.</p>
+
+<table>
+<tr><th>Élément</th><th>Fonctionnement en production</th></tr>
+<tr><td>Le site (pages, FR/EN, PWA, animations)</td><td>HTML statique servi par GitHub Pages (CDN mondial, HTTPS automatique)</td></tr>
+<tr><td>Formulaire d'adhésion</td><td><b>Zoho Form</b> intégré → notification à contact@debout-stoll.com</td></tr>
+<tr><td>Formulaire de contribution (+ photo)</td><td><b>Zoho Form</b> intégré (upload de fichier) → modération dans Zoho</td></tr>
+<tr><td>Compteur d'adhésions</td><td><b>Supabase</b> lu côté navigateur via la clé publique <code>anon</code></td></tr>
+</table>
+
+<h3>Comptes à préparer</h3>
+<ul>
+  <li><b>GitHub</b> — accès au compte <code>DeboutStoll</code> (dépôt <code>DeboutStoll/debout-stoll</code>).</li>
+  <li><b>Namecheap</b> — accès au DNS de <code>debout-stoll.com</code> (onglet <i>Advanced DNS</i>).</li>
+  <li><b>Zoho</b> — un compte Zoho Forms (le même que Zoho Mail de contact@debout-stoll.com).</li>
+  <li><b>Supabase</b> — un projet (facultatif, uniquement pour le compteur en direct).</li>
+</ul>
+
+<div class="note"><b>Pourquoi c'est accessible partout dans le monde :</b> GitHub Pages sert le site depuis un réseau de diffusion (CDN) réparti sur toute la planète. Un visiteur à Douala, Paris ou Montréal reçoit les pages en quelques millisecondes, sans calcul serveur. Le site est aussi installable comme application (PWA) et dispose d'un mode « data-light » pour les connexions lentes.</div>
+
+<div class="warn"><b>État actuel :</b> tout le code est prêt sur la branche <code>github-pages</code> du dépôt. Ce guide vous mène de cette branche jusqu'au site en ligne. La branche <code>main</code> (ancienne version) reste intacte tant que vous ne fusionnez pas.</div>
+</div>
+
+<!-- ============ SECURITY ============ -->
+<div class="phase">
+<h2>Sécurité — à faire en premier</h2>
+<p class="lead">Deux réflexes indispensables avant de commencer.</p>
+
+<div class="step"><span class="n">1</span><h4>Renouveler le token GitHub</h4>
+<p>Un token d'accès personnel (PAT) a été partagé en clair : il doit être considéré comme compromis.</p>
+<ul>
+  <li>Ouvrez <a>https://github.com/settings/tokens</a> → supprimez l'ancien token.</li>
+  <li>Créez-en un nouveau (<i>Fine-grained token</i>), limité au dépôt <code>debout-stoll</code>, permission <b>Contents : Read and write</b>, expiration courte.</li>
+  <li>Ne le collez jamais dans un chat, un fichier versionné ou une capture d'écran.</li>
+</ul>
+</div>
+
+<div class="step"><span class="n">2</span><h4>Protéger les secrets</h4>
+<p>Ne partagez jamais&nbsp;:</p>
+<ul>
+  <li>votre mot de passe de compte (GitHub, Supabase, Zoho) — aucun service n'en a besoin dans le site&nbsp;;</li>
+  <li>la clé <code>service_role</code> de Supabase (secrète). Le site n'utilise que la clé <b>anon</b>, qui est publique par nature.</li>
+</ul>
+<p>Les clés se rangent uniquement dans <b>GitHub → Settings → Secrets and variables → Actions</b> (voir Phase 4).</p>
+</div>
+
+<div class="note"><b>Compte GitHub :</b> utilisez toujours <b>DeboutStoll</b> (email contact@debout-stoll.com), jamais <i>infos-stratedged</i>. La configuration git de la machine a déjà été corrigée dans ce sens.</div>
+</div>
+
+<!-- ============ ZOHO ============ -->
+<div class="phase">
+<h2>Zoho Forms — les deux formulaires</h2>
+<p class="lead">Sur un site statique, les envois de formulaire sont gérés par Zoho (enregistrement + emails), pas par un serveur.</p>
+
+<h3>Formulaire A — « Rejoindre l'appel / Membership »</h3>
+<table>
+<tr><th>Champ</th><th>Type</th><th>Obligatoire</th></tr>
+<tr><td>Nom / Name</td><td>Ligne simple</td><td>Oui</td></tr>
+<tr><td>Promotion</td><td>Ligne simple</td><td>—</td></tr>
+<tr><td>Ville / City</td><td>Ligne simple</td><td>—</td></tr>
+<tr><td>Email</td><td>Email</td><td>Oui</td></tr>
+<tr><td>Message</td><td>Multi-lignes</td><td>—</td></tr>
+</table>
+
+<h3>Formulaire B — « Contribution mémoire »</h3>
+<table>
+<tr><th>Champ</th><th>Type</th><th>Obligatoire</th></tr>
+<tr><td>Nom / Name</td><td>Ligne simple</td><td>Oui</td></tr>
+<tr><td>Email</td><td>Email</td><td>Oui</td></tr>
+<tr><td>Type (photo / témoignage / figure)</td><td>Liste déroulante</td><td>Oui</td></tr>
+<tr><td>Titre / Title</td><td>Ligne simple</td><td>Oui</td></tr>
+<tr><td>Récit / Story</td><td>Multi-lignes</td><td>—</td></tr>
+<tr><td>Fichier / File</td><td>Upload (jpg/png/webp/pdf)</td><td>—</td></tr>
+<tr><td>Consentement / Consent</td><td>Case à cocher</td><td>Oui</td></tr>
+</table>
+
+<div class="step"><span class="n">1</span><h4>Créer les formulaires</h4>
+<p>Sur <a>https://www.zoho.com/forms</a>, créez les deux formulaires ci-dessus.</p></div>
+
+<div class="step"><span class="n">2</span><h4>Configurer les notifications</h4>
+<p>Pour chaque formulaire : <b>Settings → Email Notifications</b> → destinataire <code>contact@debout-stoll.com</code>. Activez au besoin un <b>email d'accusé de réception</b> vers l'adresse du visiteur.</p></div>
+
+<div class="step"><span class="n">3</span><h4>Récupérer les liens d'intégration</h4>
+<p>Pour chaque formulaire : <b>Share → Embed</b> → copiez l'URL <b>Permalink</b> (<code>https://forms.zohopublic.com/…/formperma/…</code>).</p></div>
+
+<div class="step"><span class="n">4</span><h4>Coller les liens dans le site</h4>
+<p>Éditez le fichier <code>content/forms.ts</code> :</p>
+<pre>export const zohoForms = {
+  join:       'https://forms.zohopublic.com/…/formperma/…',
+  contribute: 'https://forms.zohopublic.com/…/formperma/…',
+};</pre>
+<p>Puis <code>git add content/forms.ts &amp;&amp; git commit -m "Zoho form links" &amp;&amp; git push</code>. Les formulaires apparaissent sur le site après le redéploiement (~2 min).</p></div>
+</div>
+
+<!-- ============ SUPABASE ============ -->
+<div class="phase">
+<h2>Supabase — le compteur d'adhésions</h2>
+<p class="lead">Facultatif mais demandé. Le navigateur lit directement un simple nombre depuis Supabase — jamais les données des membres.</p>
+
+<div class="step"><span class="n">1</span><h4>Créer le projet &amp; les tables</h4>
+<p>Sur <a>https://supabase.com</a> : <b>New project</b> (région Europe conseillée). Puis <b>SQL Editor</b> → exécutez le fichier <code>supabase/schema.sql</code>, puis <code>supabase/member-count.sql</code>.</p></div>
+
+<div class="step"><span class="n">2</span><h4>Récupérer les identifiants publics</h4>
+<p><b>Settings → API</b> → copiez :</p>
+<ul>
+  <li>le <b>Project URL</b> ;</li>
+  <li>la clé <b>anon public</b> (celle-ci est sûre à exposer — <u>pas</u> la clé <code>service_role</code>).</li>
+</ul></div>
+
+<div class="step"><span class="n">3</span><h4>Renseigner les secrets GitHub</h4>
+<p>Dépôt GitHub → <b>Settings → Secrets and variables → Actions</b> :</p>
+<table>
+<tr><th>Nom</th><th>Type</th><th>Valeur</th></tr>
+<tr><td><code>NEXT_PUBLIC_SUPABASE_URL</code></td><td>Secret</td><td>le Project URL</td></tr>
+<tr><td><code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code></td><td>Secret</td><td>la clé anon public</td></tr>
+<tr><td><code>NEXT_PUBLIC_MEMBER_BASE_COUNT</code></td><td>Variable</td><td>point de départ (ex. <code>250</code> ou <code>0</code>)</td></tr>
+</table></div>
+
+<div class="step"><span class="n">4</span><h4>Alimenter le compteur (choisir une option)</h4>
+<ul>
+  <li><b>Webhook Zoho → Supabase</b> (recommandé) : dans Zoho Forms, <i>Integrations → Webhook</i> insère une ligne dans <code>members</code> à chaque adhésion. Le compteur reflète alors les vrais membres.</li>
+  <li><b>Manuel</b> : mettez à jour <code>NEXT_PUBLIC_MEMBER_BASE_COUNT</code> de temps en temps d'après le total Zoho.</li>
+</ul>
+<p>Si vous n'utilisez pas Supabase, le compteur affiche simplement le nombre de base.</p></div>
+</div>
+
+<!-- ============ GITHUB PAGES ============ -->
+<div class="phase">
+<h2>GitHub Pages — publier le site</h2>
+
+<div class="step"><span class="n">1</span><h4>Activer Pages</h4>
+<p>Dépôt → <b>Settings → Pages → Build and deployment → Source</b> = <b>« GitHub Actions »</b>.</p></div>
+
+<div class="step"><span class="n">2</span><h4>Déclencher le premier déploiement</h4>
+<p>Le workflow <code>.github/workflows/deploy.yml</code> publie à chaque <code>push</code> sur <code>main</code>. Fusionnez la branche prête :</p>
+<pre>git checkout main
+git merge github-pages
+git push</pre></div>
+
+<div class="step"><span class="n">3</span><h4>Suivre la publication</h4>
+<p>Onglet <b>Actions</b> → le job « Deploy to GitHub Pages » doit passer au vert (~2 min). Le site est alors visible sur <code>https://deboutstoll.github.io</code> en attendant le domaine.</p></div>
+
+<div class="note"><b>Astuce :</b> attendez d'avoir collé les liens Zoho (Phase 2) et renseigné les secrets Supabase (Phase 3) avant de fusionner, pour que la première mise en ligne soit déjà complète.</div>
+</div>
+
+<!-- ============ DNS ============ -->
+<div class="phase">
+<h2>Namecheap DNS — brancher le domaine</h2>
+
+<div class="step"><span class="n">1</span><h4>Déclarer le domaine côté GitHub</h4>
+<p>Dépôt → <b>Settings → Pages → Custom domain</b> → saisissez <code>debout-stoll.com</code> → <b>Save</b>. (Le fichier <code>public/CNAME</code> le fixe déjà aussi.)</p></div>
+
+<div class="step"><span class="n">2</span><h4>Configurer le DNS chez Namecheap</h4>
+<p><b>Domain List → Manage → Advanced DNS</b>. <b>Supprimez</b> le <code>CNAME www → parkingpage</code> et l'<code>URL Redirect @</code> par défaut, puis ajoutez :</p>
+<table>
+<tr><th>Type</th><th>Host</th><th>Value</th><th>TTL</th></tr>
+<tr><td>A Record</td><td><code>@</code></td><td><code>185.199.108.153</code></td><td>Automatic</td></tr>
+<tr><td>A Record</td><td><code>@</code></td><td><code>185.199.109.153</code></td><td>Automatic</td></tr>
+<tr><td>A Record</td><td><code>@</code></td><td><code>185.199.110.153</code></td><td>Automatic</td></tr>
+<tr><td>A Record</td><td><code>@</code></td><td><code>185.199.111.153</code></td><td>Automatic</td></tr>
+<tr><td>CNAME Record</td><td><code>www</code></td><td><code>deboutstoll.github.io.</code></td><td>Automatic</td></tr>
+</table></div>
+
+<div class="warn"><b>Ne touchez pas</b> aux enregistrements <b>Zoho Mail</b> (MX / SPF / DKIM) de <code>contact@debout-stoll.com</code> : ils sont indépendants de GitHub Pages et doivent rester en place.</div>
+
+<div class="step"><span class="n">3</span><h4>Activer HTTPS</h4>
+<p>Après propagation (10–60 min), GitHub <b>Settings → Pages</b> affiche le domaine vérifié → cochez <b>Enforce HTTPS</b>. Le certificat est délivré automatiquement.</p></div>
+</div>
+
+<!-- ============ VERIFY ============ -->
+<div class="phase">
+<h2>Vérification — liste de contrôle</h2>
+<p class="lead">Après propagation DNS, contrôlez chaque point.</p>
+<ul class="check">
+  <li><code>https://debout-stoll.com</code> se charge en HTTPS et redirige vers <code>/fr</code>.</li>
+  <li><code>www.debout-stoll.com</code> fonctionne ; <code>/en</code> fonctionne ; le sélecteur FR|EN conserve la page.</li>
+  <li>Test sur <b>téléphone réel</b> (portrait/paysage), tablette et ordinateur — aucun débordement, boutons cliquables.</li>
+  <li>Le formulaire d'adhésion s'affiche, s'envoie, et un email arrive à contact@debout-stoll.com.</li>
+  <li>Le formulaire de contribution accepte un fichier ; l'envoi est reçu.</li>
+  <li>Le compteur affiche un nombre (de base, ou en direct si Supabase est alimenté).</li>
+  <li>L'application est installable (PWA) ; le mode hors-ligne fonctionne sur les pages visitées.</li>
+  <li><code>sitemap.xml</code> et <code>robots.txt</code> sont accessibles et en <code>.com</code>.</li>
+  <li>Aperçu correct sur WhatsApp / Facebook / LinkedIn (Open Graph).</li>
+</ul>
+<pre>dig +short debout-stoll.com A      # → les quatre 185.199.108–111.153
+curl -sI https://debout-stoll.com/  # → 200/redirection, HTTPS</pre>
+</div>
+
+<!-- ============ OPS ============ -->
+<div class="phase">
+<h2>Exploitation &amp; annexes</h2>
+
+<h3>Mises à jour au quotidien</h3>
+<table>
+<tr><th>Pour…</th><th>Faire</th></tr>
+<tr><td>Modifier le contenu / un texte</td><td>Éditer <code>content/*.ts</code> ou <code>messages/fr.json</code>·<code>en.json</code> → <code>git push</code> → redéploiement auto (~2 min)</td></tr>
+<tr><td>Ajouter une figure / une photo</td><td>Déposer l'image dans <code>public/img/</code> + une entrée bilingue dans <code>content/figures.ts</code> ou <code>gallery.ts</code></td></tr>
+<tr><td>Changer un lien Zoho</td><td>Éditer <code>content/forms.ts</code> → <code>git push</code></td></tr>
+<tr><td>Revenir en arrière</td><td>GitHub → Actions → relancer un déploiement précédent, ou annuler le commit</td></tr>
+<tr><td>Prévisualiser en local</td><td><code>npm run build &amp;&amp; npm run preview</code></td></tr>
+</table>
+
+<h3>Annexe A — Comptes GitHub &amp; JetBrains</h3>
+<p>La machine authentifie désormais git en tant que <b>DeboutStoll</b> (contact@debout-stoll.com), sans invite de connexion. Pour que l'IDE JetBrains cesse d'ouvrir la page d'autorisation GitHub :</p>
+<ul>
+  <li><b>Settings → Version Control → GitHub</b> → retirer le compte <i>infos-stratedged</i> → <b>Add account → Log In with Token</b> → coller le token DeboutStoll.</li>
+  <li><b>Settings → Version Control → Git</b> → activer « Use credential helper ».</li>
+</ul>
+
+<h3>Annexe B — Fichiers de référence dans le dépôt</h3>
+<table>
+<tr><th>Fichier</th><th>Rôle</th></tr>
+<tr><td><code>GO-LIVE-GITHUB-PAGES.md</code></td><td>Version texte de ce guide</td></tr>
+<tr><td><code>content/forms.ts</code></td><td>Les 2 liens de formulaires Zoho</td></tr>
+<tr><td><code>supabase/schema.sql</code></td><td>Tables + sécurité (RLS)</td></tr>
+<tr><td><code>supabase/member-count.sql</code></td><td>Compteur public (RPC sûr)</td></tr>
+<tr><td><code>.github/workflows/deploy.yml</code></td><td>Publication automatique sur Pages</td></tr>
+<tr><td><code>public/CNAME</code></td><td>Domaine personnalisé (debout-stoll.com)</td></tr>
+</table>
+
+<h3>Annexe C — Commandes utiles</h3>
+<pre>npm run build            # construit le site statique dans out/
+npm run preview          # sert out/ localement pour test
+git checkout main
+git merge github-pages   # bascule la nouvelle version en production
+git push                 # déclenche le déploiement</pre>
+
+<div class="note" style="margin-top:1cm;text-align:center">
+<span class="kicker-sm">Debout, Stoll !</span><br>
+<i style="color:var(--ink-soft)">« Ceux que Stoll a formés doivent porter Stoll. »</i><br>
+<span style="font-size:9pt;color:#9a9083">Réseau des anciens du Collège Stoll d'Akono · contact@debout-stoll.com</span>
+</div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
