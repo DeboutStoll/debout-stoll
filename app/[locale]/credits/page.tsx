@@ -46,7 +46,7 @@ function CreditsBody({ locale }: { locale: string }) {
           <h2>{t('editorTitle')}</h2>
           <p>{t('editorBody')}</p>
           <p>
-            <a href="mailto:contact@debout-stoll.org">{t('contact')}</a>
+            <a href="mailto:contact@debout-stoll.com">{t('contact')}</a>
           </p>
         </div>
       </section>

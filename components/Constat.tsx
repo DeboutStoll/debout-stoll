@@ -8,7 +8,6 @@ import { constatVideo } from '@/content/videos';
 import { t as tr } from '@/content/types';
 import { Html } from './Html';
 import { RichText } from './RichText';
-import { Transcript } from './Videos';
 import CardCarousel from './CardCarousel';
 
 // Section VIII — Le constat: the 16-minute testimony with clickable chapters.
@@ -110,10 +109,6 @@ export default function Constat() {
           </div>
           <Html as="figcaption" className="cv-caption" html={tr(constatVideo.caption, locale)} />
         </figure>
-
-        {locale === 'en' && constatVideo.transcriptEn && (
-          <Transcript html={constatVideo.transcriptEn} />
-        )}
 
         <div className="chapters">
           <span className="chap-label">{t('chaptersLabel')}</span>

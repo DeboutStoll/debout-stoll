@@ -34,25 +34,11 @@ export default function Videos() {
                 locale={locale}
               />
               <Html as="figcaption" html={tr(v.caption, locale)} />
-              {locale === 'en' && v.transcriptEn && (
-                <Transcript html={v.transcriptEn} />
-              )}
             </figure>
           ))}
         </div>
       </div>
     </section>
-  );
-}
-
-export function Transcript({ html }: { html: string }) {
-  return (
-    <details className="vid-transcript">
-      <summary>
-        <span className="vt-flag" aria-hidden="true">🇬🇧</span> In English — what the film shows
-      </summary>
-      <div className="vt-body" dangerouslySetInnerHTML={{ __html: html }} />
-    </details>
   );
 }
 

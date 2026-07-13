@@ -14,7 +14,7 @@ export default function ShareBar() {
   const [copied, setCopied] = useState(false);
   const shareText = TEXTS[locale] ?? TEXTS.fr;
 
-  const url = () => (typeof window !== 'undefined' ? window.location.href : 'https://debout-stoll.org');
+  const url = () => (typeof window !== 'undefined' ? window.location.href : 'https://debout-stoll.com');
 
   const onShare = (type: 'whatsapp' | 'facebook' | 'copy') => {
     const link = url();

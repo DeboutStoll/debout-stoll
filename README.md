@@ -143,4 +143,4 @@ a bilingual entry to `content/figures.ts` or `content/gallery.ts`.
 ---
 
 *Médiathèque du patrimoine · Réseau des anciens du Collège Stoll d'Akono ·
-[debout-stoll.org](https://debout-stoll.org)*
+[debout-stoll.com](https://debout-stoll.com)*

@@ -22,7 +22,7 @@ export const localeHtmlLang: Record<Locale, string> = {
 };
 
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://debout-stoll.org';
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://debout-stoll.com';
 
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);

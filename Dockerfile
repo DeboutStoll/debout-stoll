@@ -41,4 +41,9 @@ RUN mkdir -p /app/data /app/public/uploads && chown -R nextjs:nodejs /app/data /
 
 USER nextjs
 EXPOSE 3000
+
+# Container health: probe the app's liveness endpoint (busybox wget is built in).
+HEALTHCHECK --interval=30s --timeout=4s --start-period=20s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://127.0.0.1:3000/api/health || exit 1
+
 CMD ["node", "server.js"]

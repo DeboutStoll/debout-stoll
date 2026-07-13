@@ -4,8 +4,8 @@
  * • Otherwise → logs to the server console (development: no external service).
  */
 
-const FROM = process.env.EMAIL_FROM || 'Debout Stoll <contact@debout-stoll.org>';
-const NOTIFY = process.env.EMAIL_NOTIFY || 'contact@debout-stoll.org';
+const FROM = process.env.EMAIL_FROM || 'Debout Stoll <contact@debout-stoll.com>';
+const NOTIFY = process.env.EMAIL_NOTIFY || 'contact@debout-stoll.com';
 const hasResend = !!process.env.RESEND_API_KEY;
 
 async function send(opts: { to: string; subject: string; html: string; replyTo?: string }) {
