@@ -28,7 +28,7 @@ export const StollIntro: React.FC<StollIntroProps> = ({
   line2,
   lede,
   beats,
-  bgSrc = '/img/chantier-1923.jpg',
+  bgSrc = '/img/facade-1937.jpg',
 }) => {
   const frame = useCurrentFrame();
   const ease = Easing.bezier(0.16, 1, 0.3, 1);
