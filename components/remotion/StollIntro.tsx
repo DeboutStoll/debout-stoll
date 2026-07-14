@@ -75,7 +75,7 @@ export const StollIntro: React.FC<StollIntroProps> = ({
             height: '100%',
             objectFit: 'cover',
             transform: `scale(${bgScale}) translate(${bgX}%, ${bgY}%)`,
-            filter: 'grayscale(0.4) contrast(1.06) brightness(0.8)',
+            filter: 'grayscale(0.5) contrast(1.1) brightness(0.6)',
           }}
         />
       </AbsoluteFill>
@@ -84,7 +84,7 @@ export const StollIntro: React.FC<StollIntroProps> = ({
       <AbsoluteFill
         style={{
           background:
-            'linear-gradient(180deg, rgba(5,4,3,.88) 0%, rgba(5,4,3,.54) 40%, rgba(5,4,3,.6) 62%, rgba(5,4,3,.92) 100%)',
+            'linear-gradient(180deg, rgba(5,4,3,.94) 0%, rgba(5,4,3,.72) 40%, rgba(5,4,3,.76) 62%, rgba(5,4,3,.97) 100%)',
         }}
       />
       <AbsoluteFill
