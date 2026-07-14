@@ -18,7 +18,7 @@ export type StollIntroProps = {
   slides: Slide[]; // four historical moments, cross-faded in the background
 };
 
-export const STOLL_INTRO_DURATION = 600; // 20s @ 30fps
+export const STOLL_INTRO_DURATION = 840; // 28s @ 30fps (~7s per slide)
 
 // The documentary cold-open, serving as the hero. A cross-fading Ken Burns
 // slideshow of four historical moments (1923 → 1937 → 1969 → today) runs full
