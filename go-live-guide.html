@@ -82,14 +82,14 @@
 <section class="cover">
   <div class="kicker">Collège Stoll d'Akono · Réseau des anciens</div>
   <h1>Debout, <em>Stoll</em> !<br>Guide de mise en ligne</h1>
-  <div class="sub">Déploiement complet, pas à pas, du site sur GitHub Pages avec le domaine Namecheap, les formulaires Zoho et le compteur Supabase.</div>
+  <div class="sub">Déploiement complet, pas à pas, du site sur GitHub Pages avec le domaine Namecheap. Toute la participation se fait via le groupe Facebook.</div>
   <div class="dom">→ https://debout-stoll.com</div>
-  <div class="meta">Document technique · Architecture statique (GitHub Pages) · Version du 13 juillet 2026</div>
+  <div class="meta">Document technique · Architecture statique (GitHub Pages) · Version du 14 juillet 2026</div>
   <div class="stack">
     <div><b>Hébergement</b><br>GitHub Pages (CDN mondial, HTTPS auto)</div>
     <div><b>Domaine / DNS</b><br>Namecheap — debout-stoll.com</div>
-    <div><b>Formulaires</b><br>Zoho Forms (adhésion + contribution)</div>
-    <div><b>Compteur</b><br>Supabase (lecture navigateur)</div>
+    <div><b>Participation</b><br>Groupe Facebook (adhésion + publications)</div>
+    <div><b>Compteur</b><br>Nombre de membres du groupe Facebook</div>
     <div><b>Code source</b><br>GitHub — DeboutStoll/debout-stoll</div>
     <div><b>Email</b><br>contact@debout-stoll.com (Zoho Mail)</div>
   </div>
@@ -120,17 +120,16 @@
 <table>
 <tr><th>Élément</th><th>Fonctionnement en production</th></tr>
 <tr><td>Le site (pages, FR/EN, PWA, animations)</td><td>HTML statique servi par GitHub Pages (CDN mondial, HTTPS automatique)</td></tr>
-<tr><td>Formulaire d'adhésion</td><td><b>Zoho Form</b> intégré → notification à contact@debout-stoll.com</td></tr>
-<tr><td>Formulaire de contribution (+ photo)</td><td><b>Zoho Form</b> intégré (upload de fichier) → modération dans Zoho</td></tr>
-<tr><td>Compteur d'adhésions</td><td><b>Supabase</b> lu côté navigateur via la clé publique <code>anon</code></td></tr>
+<tr><td>Adhésion &amp; participation</td><td>On rejoint le <b>groupe Facebook</b> ; chaque membre y publie ensuite librement</td></tr>
+<tr><td>Contributions (photos, souvenirs)</td><td>Publiées directement dans le <b>groupe Facebook</b> par les membres</td></tr>
+<tr><td>Compteur de membres</td><td>Nombre du groupe Facebook, saisi à la main dans <code>content/social.ts</code></td></tr>
 </table>
 
 <h3>Comptes à préparer</h3>
 <ul>
   <li><b>GitHub</b> — accès au compte <code>DeboutStoll</code> (dépôt <code>DeboutStoll/debout-stoll</code>).</li>
   <li><b>Namecheap</b> — accès au DNS de <code>debout-stoll.com</code> (onglet <i>Advanced DNS</i>).</li>
-  <li><b>Zoho</b> — un compte Zoho Forms (le même que Zoho Mail de contact@debout-stoll.com).</li>
-  <li><b>Supabase</b> — un projet (facultatif, uniquement pour le compteur en direct).</li>
+  <li><b>Groupe Facebook</b> — le groupe des anciens (déjà créé) ; c'est là que tout se passe.</li>
 </ul>
 
 <div class="note"><b>Pourquoi c'est accessible partout dans le monde :</b> GitHub Pages sert le site depuis un réseau de diffusion (CDN) réparti sur toute la planète. Un visiteur à Douala, Paris ou Montréal reçoit les pages en quelques millisecondes, sans calcul serveur. Le site est aussi installable comme application (PWA) et dispose d'un mode « data-light » pour les connexions lentes.</div>
@@ -164,81 +163,29 @@
 <div class="note"><b>Compte GitHub :</b> utilisez toujours <b>DeboutStoll</b> (email contact@debout-stoll.com), jamais <i>infos-stratedged</i>. La configuration git de la machine a déjà été corrigée dans ce sens.</div>
 </div>
 
-<!-- ============ ZOHO ============ -->
+<!-- ============ FACEBOOK ============ -->
 <div class="phase">
-<h2>Zoho Forms — les deux formulaires</h2>
-<p class="lead">Sur un site statique, les envois de formulaire sont gérés par Zoho (enregistrement + emails), pas par un serveur.</p>
+<h2>Le groupe Facebook — cœur de la participation</h2>
+<p class="lead">Il n'y a plus aucun formulaire. Toute la participation passe par le <b>groupe Facebook</b> des anciens : on le rejoint, puis chaque membre y publie librement photos, souvenirs et nouvelles. Le site sert de vitrine et renvoie vers le groupe.</p>
 
-<h3>Formulaire A — « Rejoindre l'appel / Membership »</h3>
-<table>
-<tr><th>Champ</th><th>Type</th><th>Obligatoire</th></tr>
-<tr><td>Nom / Name</td><td>Ligne simple</td><td>Oui</td></tr>
-<tr><td>Promotion</td><td>Ligne simple</td><td>—</td></tr>
-<tr><td>Ville / City</td><td>Ligne simple</td><td>—</td></tr>
-<tr><td>Email</td><td>Email</td><td>Oui</td></tr>
-<tr><td>Message</td><td>Multi-lignes</td><td>—</td></tr>
-</table>
+<div class="note"><b>Rien à installer :</b> le groupe existe déjà et son lien est intégré partout dans le site (bouton « Rejoindre le groupe Facebook »). Aucun compte Zoho ni Supabase n'est nécessaire.</div>
 
-<h3>Formulaire B — « Contribution mémoire »</h3>
-<table>
-<tr><th>Champ</th><th>Type</th><th>Obligatoire</th></tr>
-<tr><td>Nom / Name</td><td>Ligne simple</td><td>Oui</td></tr>
-<tr><td>Email</td><td>Email</td><td>Oui</td></tr>
-<tr><td>Type (photo / témoignage / figure)</td><td>Liste déroulante</td><td>Oui</td></tr>
-<tr><td>Titre / Title</td><td>Ligne simple</td><td>Oui</td></tr>
-<tr><td>Récit / Story</td><td>Multi-lignes</td><td>—</td></tr>
-<tr><td>Fichier / File</td><td>Upload (jpg/png/webp/pdf)</td><td>—</td></tr>
-<tr><td>Consentement / Consent</td><td>Case à cocher</td><td>Oui</td></tr>
-</table>
+<div class="step"><span class="n">1</span><h4>Vérifier le lien du groupe</h4>
+<p>Le lien est dans <code>content/social.ts</code> :</p>
+<pre>facebookGroup: 'https://www.facebook.com/groups/2246960062720670/'</pre>
+<p>Pour le changer, modifiez cette ligne, puis <code>git commit</code> + <code>git push</code>.</p></div>
 
-<div class="step"><span class="n">1</span><h4>Créer les formulaires</h4>
-<p>Sur <a>https://www.zoho.com/forms</a>, créez les deux formulaires ci-dessus.</p></div>
+<div class="step"><span class="n">2</span><h4>Mettre à jour le nombre de membres</h4>
+<p>Le compteur affiche un nombre saisi à la main (relevé sur le groupe Facebook). Dans <code>content/social.ts</code> :</p>
+<pre>export const facebookMembers = 0;   // ← mettez le nombre réel du groupe</pre>
+<p>Tant que la valeur est <code>0</code>, la tuile « Membres » reste masquée. Mettez le vrai nombre, puis <code>git push</code>.</p></div>
 
-<div class="step"><span class="n">2</span><h4>Configurer les notifications</h4>
-<p>Pour chaque formulaire : <b>Settings → Email Notifications</b> → destinataire <code>contact@debout-stoll.com</code>. Activez au besoin un <b>email d'accusé de réception</b> vers l'adresse du visiteur.</p></div>
-
-<div class="step"><span class="n">3</span><h4>Récupérer les liens d'intégration</h4>
-<p>Pour chaque formulaire : <b>Share → Embed</b> → copiez l'URL <b>Permalink</b> (<code>https://forms.zohopublic.com/…/formperma/…</code>).</p></div>
-
-<div class="step"><span class="n">4</span><h4>Coller les liens dans le site</h4>
-<p>Éditez le fichier <code>content/forms.ts</code> :</p>
-<pre>export const zohoForms = {
-  join:       'https://forms.zohopublic.com/…/formperma/…',
-  contribute: 'https://forms.zohopublic.com/…/formperma/…',
-};</pre>
-<p>Puis <code>git add content/forms.ts &amp;&amp; git commit -m "Zoho form links" &amp;&amp; git push</code>. Les formulaires apparaissent sur le site après le redéploiement (~2 min).</p></div>
-</div>
-
-<!-- ============ SUPABASE ============ -->
-<div class="phase">
-<h2>Supabase — le compteur d'adhésions</h2>
-<p class="lead">Facultatif mais demandé. Le navigateur lit directement un simple nombre depuis Supabase — jamais les données des membres.</p>
-
-<div class="step"><span class="n">1</span><h4>Créer le projet &amp; les tables</h4>
-<p>Sur <a>https://supabase.com</a> : <b>New project</b> (région Europe conseillée). Puis <b>SQL Editor</b> → exécutez le fichier <code>supabase/schema.sql</code>, puis <code>supabase/member-count.sql</code>.</p></div>
-
-<div class="step"><span class="n">2</span><h4>Récupérer les identifiants publics</h4>
-<p><b>Settings → API</b> → copiez :</p>
+<div class="step"><span class="n">3</span><h4>Régler le groupe (côté Facebook)</h4>
 <ul>
-  <li>le <b>Project URL</b> ;</li>
-  <li>la clé <b>anon public</b> (celle-ci est sûre à exposer — <u>pas</u> la clé <code>service_role</code>).</li>
+  <li>Réglez le groupe sur <b>Public</b> ou <b>Privé</b> selon votre choix (Privé = les publications ne sont visibles qu'après adhésion).</li>
+  <li>Activez au besoin les <b>questions d'adhésion</b> et la <b>validation des membres</b>.</li>
+  <li>Épinglez un post de bienvenue expliquant qu'on peut publier photos et souvenirs.</li>
 </ul></div>
-
-<div class="step"><span class="n">3</span><h4>Renseigner les secrets GitHub</h4>
-<p>Dépôt GitHub → <b>Settings → Secrets and variables → Actions</b> :</p>
-<table>
-<tr><th>Nom</th><th>Type</th><th>Valeur</th></tr>
-<tr><td><code>NEXT_PUBLIC_SUPABASE_URL</code></td><td>Secret</td><td>le Project URL</td></tr>
-<tr><td><code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code></td><td>Secret</td><td>la clé anon public</td></tr>
-<tr><td><code>NEXT_PUBLIC_MEMBER_BASE_COUNT</code></td><td>Variable</td><td>point de départ (ex. <code>250</code> ou <code>0</code>)</td></tr>
-</table></div>
-
-<div class="step"><span class="n">4</span><h4>Alimenter le compteur (choisir une option)</h4>
-<ul>
-  <li><b>Webhook Zoho → Supabase</b> (recommandé) : dans Zoho Forms, <i>Integrations → Webhook</i> insère une ligne dans <code>members</code> à chaque adhésion. Le compteur reflète alors les vrais membres.</li>
-  <li><b>Manuel</b> : mettez à jour <code>NEXT_PUBLIC_MEMBER_BASE_COUNT</code> de temps en temps d'après le total Zoho.</li>
-</ul>
-<p>Si vous n'utilisez pas Supabase, le compteur affiche simplement le nombre de base.</p></div>
 </div>
 
 <!-- ============ GITHUB PAGES ============ -->
@@ -292,9 +239,8 @@ git push</pre></div>
   <li><code>https://debout-stoll.com</code> se charge en HTTPS et redirige vers <code>/fr</code>.</li>
   <li><code>www.debout-stoll.com</code> fonctionne ; <code>/en</code> fonctionne ; le sélecteur FR|EN conserve la page.</li>
   <li>Test sur <b>téléphone réel</b> (portrait/paysage), tablette et ordinateur — aucun débordement, boutons cliquables.</li>
-  <li>Le formulaire d'adhésion s'affiche, s'envoie, et un email arrive à contact@debout-stoll.com.</li>
-  <li>Le formulaire de contribution accepte un fichier ; l'envoi est reçu.</li>
-  <li>Le compteur affiche un nombre (de base, ou en direct si Supabase est alimenté).</li>
+  <li>Le bouton <b>« Rejoindre le groupe Facebook »</b> ouvre bien le bon groupe (accueil, page Rejoindre, page Contribuer).</li>
+  <li>Le compteur affiche le nombre de membres (si <code>facebookMembers</code> &gt; 0 dans <code>content/social.ts</code>).</li>
   <li>L'application est installable (PWA) ; le mode hors-ligne fonctionne sur les pages visitées.</li>
   <li><code>sitemap.xml</code> et <code>robots.txt</code> sont accessibles et en <code>.com</code>.</li>
   <li>Aperçu correct sur WhatsApp / Facebook / LinkedIn (Open Graph).</li>
@@ -312,7 +258,8 @@ curl -sI https://debout-stoll.com/  # → 200/redirection, HTTPS</pre>
 <tr><th>Pour…</th><th>Faire</th></tr>
 <tr><td>Modifier le contenu / un texte</td><td>Éditer <code>content/*.ts</code> ou <code>messages/fr.json</code>·<code>en.json</code> → <code>git push</code> → redéploiement auto (~2 min)</td></tr>
 <tr><td>Ajouter une figure / une photo</td><td>Déposer l'image dans <code>public/img/</code> + une entrée bilingue dans <code>content/figures.ts</code> ou <code>gallery.ts</code></td></tr>
-<tr><td>Changer un lien Zoho</td><td>Éditer <code>content/forms.ts</code> → <code>git push</code></td></tr>
+<tr><td>Changer le lien du groupe Facebook</td><td>Éditer <code>content/social.ts</code> → <code>git push</code></td></tr>
+<tr><td>Mettre à jour le nombre de membres</td><td>Éditer <code>facebookMembers</code> dans <code>content/social.ts</code> → <code>git push</code></td></tr>
 <tr><td>Revenir en arrière</td><td>GitHub → Actions → relancer un déploiement précédent, ou annuler le commit</td></tr>
 <tr><td>Prévisualiser en local</td><td><code>npm run build &amp;&amp; npm run preview</code></td></tr>
 </table>
@@ -328,9 +275,7 @@ curl -sI https://debout-stoll.com/  # → 200/redirection, HTTPS</pre>
 <table>
 <tr><th>Fichier</th><th>Rôle</th></tr>
 <tr><td><code>GO-LIVE-GITHUB-PAGES.md</code></td><td>Version texte de ce guide</td></tr>
-<tr><td><code>content/forms.ts</code></td><td>Les 2 liens de formulaires Zoho</td></tr>
-<tr><td><code>supabase/schema.sql</code></td><td>Tables + sécurité (RLS)</td></tr>
-<tr><td><code>supabase/member-count.sql</code></td><td>Compteur public (RPC sûr)</td></tr>
+<tr><td><code>content/social.ts</code></td><td>Lien du groupe Facebook + nombre de membres</td></tr>
 <tr><td><code>.github/workflows/deploy.yml</code></td><td>Publication automatique sur Pages</td></tr>
 <tr><td><code>public/CNAME</code></td><td>Domaine personnalisé (debout-stoll.com)</td></tr>
 </table>

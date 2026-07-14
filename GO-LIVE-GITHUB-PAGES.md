@@ -1,99 +1,52 @@
-# GO-LIVE — Debout, Stoll ! on GitHub Pages + Namecheap + Zoho
+# GO-LIVE — Debout, Stoll ! on GitHub Pages + Namecheap + Facebook
 
-The site now deploys as a **static export** to **GitHub Pages** (free, global
-CDN, automatic HTTPS), on your Namecheap domain **debout-stoll.com**. The
-dynamic parts are handled without a server:
+The site deploys as a **static export** to **GitHub Pages** (free, global CDN,
+automatic HTTPS), on your Namecheap domain **debout-stoll.com**. There are **no
+forms and no database** — all participation happens in the **Facebook group**.
 
 | Piece | How it works now |
 |---|---|
 | Site (all pages, FR/EN, PWA, animations) | Static HTML on GitHub Pages |
-| Membership form | **Zoho Form** (embedded) → emails `contact@debout-stoll.com` |
-| Contribution form (+ photo) | **Zoho Form** (embedded, file upload) → moderated in Zoho |
-| Live member counter | **Supabase** read client-side via the public anon key |
+| Membership & participation | **Facebook group** — people join, then post freely |
+| Contributions (photos, memories) | Posted directly in the **Facebook group** by members |
+| Member counter | A number kept by hand in `content/social.ts` (from the group) |
 
-> This supersedes the Vercel-based guides (`GO-LIVE.md`, `DEPLOIEMENT.md`,
-> `WALKTHROUGH-VERCEL.md`, `WALKTHROUGH-SUPABASE-RESEND.md`) — those describe the
-> old server architecture and are kept only for reference.
-
----
-
-## 1. Create the two Zoho Forms
-
-In **https://www.zoho.com/forms** → create two forms. Match the fields below
-(they mirror the app's original forms).
-
-**Form A — "Rejoindre l'appel / Membership"**
-| Field | Type | Required |
-|---|---|---|
-| Nom / Name | Single line | ✅ |
-| Promotion | Single line | — |
-| Ville / City | Single line | — |
-| Email | Email | ✅ |
-| Message | Multi line | — |
-
-**Form B — "Contribution mémoire / Memory contribution"**
-| Field | Type | Required |
-|---|---|---|
-| Nom / Name | Single line | ✅ |
-| Email | Email | ✅ |
-| Type (photo / témoignage / figure) | Dropdown | ✅ |
-| Titre / Title | Single line | ✅ |
-| Récit / Story | Multi line | — |
-| Fichier / File | File upload (jpg/png/webp/pdf) | — |
-| Consentement / Consent | Checkbox | ✅ |
-
-For **each** form:
-- **Settings → Email Notifications** → send to `contact@debout-stoll.com` on every submission.
-- (Optional) **Acknowledgement email** → confirmation to the submitter's email.
-- **Share → Embed** → copy the **Permalink / iframe URL** (`https://forms.zohopublic…`).
-
-Then paste the two URLs into **`content/forms.ts`**:
-```ts
-export const zohoForms = {
-  join: 'https://forms.zohopublic.com/…/formperma/…',
-  contribute: 'https://forms.zohopublic.com/…/formperma/…',
-};
-```
-Commit + push → the forms appear on the site.
+> This supersedes the Vercel/Zoho/Supabase guides (`GO-LIVE.md`, `DEPLOIEMENT.md`,
+> `WALKTHROUGH-*.md`) — kept for reference only.
 
 ---
 
-## 2. Live counter — Supabase (optional but requested)
+## 1. The Facebook group (the whole participation model)
 
-1. In your Supabase project → **SQL Editor** → run **`supabase/schema.sql`**
-   (once), then **`supabase/member-count.sql`** (exposes a safe count to `anon`).
-2. **Settings → API** → copy the **Project URL** and the **anon `public`** key
-   (this one is safe to expose — NOT the service_role).
-3. GitHub → repo **Settings → Secrets and variables → Actions**:
-   - Secret `NEXT_PUBLIC_SUPABASE_URL` = your Project URL
-   - Secret `NEXT_PUBLIC_SUPABASE_ANON_KEY` = the anon public key
-   - Variable `NEXT_PUBLIC_MEMBER_BASE_COUNT` = starting offset (e.g. `250`, or `0`)
+No forms, no accounts to create. The group already exists and its link is wired
+into the site everywhere (the "Join the Facebook group" button).
 
-**Feeding the counter with real sign-ups** — since the form goes to Zoho, choose one:
-- **Zoho → Supabase webhook** (Zoho Forms *Integrations → Webhook* → insert a
-  row into `members` via Supabase REST). Best: the counter tracks real members.
-- **Manual**: bump `NEXT_PUBLIC_MEMBER_BASE_COUNT` periodically from Zoho's
-  submission count. Simplest.
-
-If you skip Supabase entirely, the counter just shows the base number.
-
----
-
-## 3. Enable GitHub Pages
-
-1. Repo **Settings → Pages → Build and deployment → Source = "GitHub Actions"**.
-2. The workflow `.github/workflows/deploy.yml` builds and publishes on every push
-   to `main`. Merge the `github-pages` branch into `main` to trigger the first
-   deploy:
-   ```bash
-   git checkout main && git merge github-pages && git push
+1. **Group link** — set in `content/social.ts`:
+   ```ts
+   facebookGroup: 'https://www.facebook.com/groups/2246960062720670/'
    ```
-3. Watch **Actions** tab → the "Deploy to GitHub Pages" run should go green.
-   Your site is live at `https://deboutstoll.github.io` until the domain is attached.
+   To change it, edit that line → `git commit` + `git push`.
+2. **Member count** — the counter shows a hand-set number (hidden while `0`):
+   ```ts
+   export const facebookMembers = 0;   // ← put the group's real number
+   ```
+3. **On Facebook**: set the group Public/Private as you wish, enable membership
+   questions/approval if desired, and pin a welcome post inviting members to
+   share photos and memories.
 
 ---
 
-## 4. Domain — Namecheap DNS for GitHub Pages
+## 2. Enable GitHub Pages
+
+1. Repo must be **public** (free Pages) → **Settings → Pages → Source = "GitHub Actions"**.
+2. The workflow `.github/workflows/deploy.yml` builds and publishes on every push
+   to `main` (~2 min). It's already live — the site publishes to
+   `https://deboutstoll.github.io/debout-stoll/` until the custom domain is attached.
+3. Watch the **Actions** tab → the "Deploy to GitHub Pages" run should be green.
+
+---
+
+## 3. Domain — Namecheap DNS for GitHub Pages
 
 Repo **Settings → Pages → Custom domain** → enter `debout-stoll.com` → Save.
 (The `public/CNAME` file already pins it too.)
@@ -117,21 +70,21 @@ verified → tick **Enforce HTTPS** (GitHub issues the certificate automatically
 
 ---
 
-## 5. Verify
+## 4. Verify
 
 ```bash
 dig +short debout-stoll.com A          # → the four 185.199.108-111.153
 curl -sI https://debout-stoll.com/     # 200/redirect, HTTPS
 ```
 - [ ] `https://debout-stoll.com` loads, redirects to `/fr`, `/en` works.
-- [ ] Both Zoho forms display and submit; email arrives at `contact@debout-stoll.com`.
-- [ ] Counter shows a number (base, or live if Supabase is fed).
+- [ ] The **"Join the Facebook group"** button opens the right group (home, Rejoindre, Contribuer).
+- [ ] Counter shows the member number (if `facebookMembers` > 0 in `content/social.ts`).
 - [ ] Test on a real phone (responsive), check the PWA installs.
 - [ ] `sitemap.xml` / `robots.txt` reachable.
 
 ---
 
 ## Day-to-day
-- **Edit content / forms** → change files → `git push` → auto-redeploys (~1–2 min).
+- **Edit content / the Facebook link / member count** → change files (`content/social.ts`, `messages/*.json`) → `git push` → auto-redeploys (~1–2 min).
 - **Rollback** → GitHub → Actions → re-run an older successful deploy, or revert the commit.
 - **Local preview of the static build** → `npm run build && npm run preview`.
