@@ -33,7 +33,7 @@ export default function FilmIntro() {
           doubleClickToFullscreen={false}
           initiallyMuted
           inputProps={{
-            presents: en ? 'The alumni network presents' : 'Le réseau des anciens présente',
+            presents: '',
             tagline: en ? 'Seminary · Mission · College' : 'Séminaire · Mission · Collège',
           }}
         />
