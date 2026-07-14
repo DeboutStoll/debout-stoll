@@ -1,68 +1,67 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { StollIntro, STOLL_INTRO_DURATION } from './remotion/StollIntro';
 
-const Player = dynamic(() => import('@remotion/player').then((m) => m.Player), {
-  ssr: false,
-  loading: () => <div className="film-intro-loading" aria-hidden="true" />,
-});
+// Four historical moments retraced by the background slideshow.
+const SLIDES = [
+  { img: '/img/chantier-1923.jpg', year: { fr: '1923', en: '1923' }, label: { fr: 'Le chantier', en: 'The construction' } },
+  { img: '/img/facade-1937.jpg', year: { fr: '1937', en: '1937' }, label: { fr: 'La façade', en: 'The façade' } },
+  { img: '/img/inauguration-1969.jpg', year: { fr: '1969', en: '1969' }, label: { fr: "L'inauguration", en: 'The inauguration' } },
+  { img: '/img/14-hectares.jpg', year: { fr: "Aujourd'hui", en: 'Today' }, label: { fr: '14 hectares', en: '14 hectares' } },
+];
 
-// The opening title sequence, now serving as the hero itself: a full-bleed,
-// full-viewport cinematic band (ARTE / Netflix style). The 16:9 composition is
-// scaled to COVER the whole band; a scroll cue invites the reader downward.
+// The documentary cold-open, serving as the hero. A fully responsive CSS/React
+// slideshow (Ken Burns cross-fade of four historical moments) fills the whole
+// band on every device, with responsive `clamp()` typography over it — ARTE /
+// Netflix style, crisp from small phones to desktop.
 export default function FilmIntro() {
   const t = useTranslations('hero');
-  const en = useLocale() === 'en';
+  const loc = (useLocale() === 'en' ? 'en' : 'fr') as 'fr' | 'en';
+  const [active, setActive] = useState(0);
 
-  // Four historical moments retraced by the background slideshow.
-  const slides = [
-    { img: '/img/chantier-1923.jpg', year: '1923', label: en ? 'The construction' : 'Le chantier' },
-    { img: '/img/facade-1937.jpg', year: '1937', label: en ? 'The façade' : 'La façade' },
-    { img: '/img/inauguration-1969.jpg', year: '1969', label: en ? 'The inauguration' : "L'inauguration" },
-    { img: '/img/14-hectares.jpg', year: en ? 'Today' : "Aujourd'hui", label: en ? '14 hectares' : '14 hectares' },
-  ];
+  useEffect(() => {
+    const id = window.setInterval(
+      () => setActive((a) => (a + 1) % SLIDES.length),
+      7000,
+    );
+    return () => window.clearInterval(id);
+  }, []);
+
+  const cur = SLIDES[active];
 
   return (
-    <header
-      className="film-intro"
-      role="img"
-      aria-label={`${t('title')} ${t('titleEm')}`}
-    >
-      <div className="film-intro-inner">
-        <Player
-          component={StollIntro}
-          durationInFrames={STOLL_INTRO_DURATION}
-          fps={30}
-          compositionWidth={1920}
-          compositionHeight={1080}
-          // Cover the full viewport band without distortion (the 16:9 box is
-          // grown to the larger of width/height and centred; overflow clipped).
-          style={{
-            position: 'absolute',
-            left: '50%',
-            top: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 'max(100vw, 177.78svh)',
-            height: 'max(100svh, 56.25vw)',
-          }}
-          autoPlay
-          loop
-          controls={false}
-          clickToPlay={false}
-          doubleClickToFullscreen={false}
-          initiallyMuted
-          inputProps={{
-            line1: t('title'),
-            line2: t('titleEm'),
-            lede: t('lede'),
-            slides,
-          }}
-        />
+    <header className="hero-film" role="img" aria-label={`${t('title')} ${t('titleEm')}`}>
+      <div className="hf-slides" aria-hidden="true">
+        {SLIDES.map((s, i) => (
+          <div
+            key={i}
+            className={`hf-slide${i === active ? ' is-active' : ''}`}
+            style={{ backgroundImage: `url(${s.img})` }}
+          />
+        ))}
       </div>
-      <div className="film-scroll" aria-hidden="true">
-        <span>{en ? 'Scroll' : 'Défiler'}</span>
+      <div className="hf-grade" aria-hidden="true" />
+      <div className="hf-bar hf-bar-top" aria-hidden="true" />
+      <div className="hf-bar hf-bar-bottom" aria-hidden="true" />
+
+      <div className="hf-content">
+        <h1 className="hf-title">
+          {t('title')}
+          <br />
+          <em>{t('titleEm')}</em>
+        </h1>
+        <span className="hf-rule" aria-hidden="true" />
+        <p className="hf-lede">{t('lede')}</p>
+      </div>
+
+      <div className="hf-caption" aria-hidden="true">
+        <b key={active}>{cur.year[loc]}</b>
+        <span>{cur.label[loc]}</span>
+      </div>
+
+      <div className="hf-scroll" aria-hidden="true">
+        <span>{loc === 'en' ? 'Scroll' : 'Défiler'}</span>
         <span className="line" />
       </div>
     </header>
