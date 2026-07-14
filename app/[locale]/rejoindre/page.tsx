@@ -2,9 +2,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
+import { social } from '@/content/social';
 import { RichText } from '@/components/RichText';
 import StatsCounter from '@/components/StatsCounter';
-import JoinForm from '@/components/JoinForm';
 import ShareBar from '@/components/ShareBar';
 import Footer from '@/components/Footer';
 
@@ -33,6 +33,7 @@ export default function RejoindrePage({
 
 function RejoindreBody({ locale }: { locale: string }) {
   const t = useTranslations('rejoindre');
+  const cta = useTranslations('cta');
   const common = useTranslations('common');
   return (
     <>
@@ -48,15 +49,29 @@ function RejoindreBody({ locale }: { locale: string }) {
       <section id="rejoindre" style={{ borderBottom: 'none' }}>
         <div className="wrap">
           <StatsCounter />
-          <div className="join-grid">
-            <div>
-              <div className="share-row" style={{ marginTop: 0 }}>
-                <span>{t('shareLabel')}</span>
-                <ShareBar />
-              </div>
-              <div className="join-quote">{t('quote')}</div>
+          <div className="join-cta">
+            <RichText as="p" className="join-lead" path="rejoindre.facebookLead" />
+            <div className="join-actions">
+              <a
+                className="jbtn jbtn-fb"
+                href={social.facebookGroup}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="fb-glyph" aria-hidden="true">
+                  f
+                </span>
+                {cta('facebookGroup')}
+              </a>
+              <Link className="jbtn jbtn-ghost" href={`/${locale}/contribuer`}>
+                📸&nbsp; {cta('contribute')}
+              </Link>
             </div>
-            <JoinForm />
+            <div className="share-row">
+              <span>{t('shareLabel')}</span>
+              <ShareBar />
+            </div>
+            <div className="join-quote">{t('quote')}</div>
           </div>
         </div>
       </section>

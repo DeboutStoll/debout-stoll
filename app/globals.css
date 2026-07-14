@@ -263,7 +263,11 @@ figcaption b{color:var(--gold-soft);font-weight:600}
   text-align:justify;text-align-last:left;hyphens:auto}
 .join-lead strong{color:var(--gold-soft)}
 .join-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:start}
-.join-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}
+/* Facebook-only call to action (no form) */
+.join-cta{max-width:640px}
+.join-cta .join-lead{margin:0 0 26px}
+.join-cta .jbtn-fb{font-size:1.05rem;padding:16px 30px}
+.join-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:30px}
 .jstat{border:1px solid var(--line);border-radius:6px;padding:18px 16px;background:var(--paper-2);text-align:center}
 .jstat b{display:block;font-size:1.9rem;font-weight:700;
   background:linear-gradient(90deg,var(--laterite-2),var(--gold-soft));
@@ -735,12 +739,3 @@ footer .social-row span{font-size:.72rem;letter-spacing:.2em;text-transform:uppe
   border:1px solid var(--line-strong);color:var(--gold-soft);text-decoration:none;font-size:.95rem;font-weight:700;
   transition:background .3s,transform .25s,color .3s}
 .social-btn:hover{background:var(--laterite);color:#fff;transform:translateY(-2px) scale(1.05);border-color:var(--laterite-2)}
-
-/* =====================================================================
-   ZOHO FORMS — embedded membership / contribution forms (static host)
-   ===================================================================== */
-.zoho-embed{margin-top:18px;border:1px solid var(--line);border-radius:8px;overflow:hidden;
-  background:rgba(0,0,0,.18)}
-.zoho-embed iframe{display:block;width:100%}
-.zoho-embed--empty{padding:26px 22px;text-align:center}
-.zoho-embed--empty p{color:var(--bone-dim);font-style:italic;margin:0}

@@ -3,6 +3,11 @@
 // ready (WhatsApp Business, YouTube, X, TikTok coming later).
 export type SocialKey = 'facebookGroup' | 'whatsapp' | 'youtube' | 'x' | 'tiktok';
 
+// Number of members in the Facebook group, shown in the counter.
+// Update this by hand from the group's real figure (or 0 to hide the tile).
+// Everything runs on Facebook now, so this is the single source for the count.
+export const facebookMembers = 0;
+
 export const social: Record<SocialKey, string> = {
   facebookGroup: 'https://www.facebook.com/groups/2246960062720670/',
   whatsapp: '', // WhatsApp Business invite link

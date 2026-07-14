@@ -34,11 +34,6 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: https://debout-stoll.com
-          # Public, safe-to-expose Supabase values for the client-side counter.
-          # Add them under Settings → Secrets and variables → Actions.
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-          NEXT_PUBLIC_MEMBER_BASE_COUNT: ${{ vars.NEXT_PUBLIC_MEMBER_BASE_COUNT }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
