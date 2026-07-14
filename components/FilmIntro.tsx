@@ -9,21 +9,15 @@ const Player = dynamic(() => import('@remotion/player').then((m) => m.Player), {
   loading: () => <div className="film-intro-loading" aria-hidden="true" />,
 });
 
-// The documentary's opening titles — a seamless, controls-free cold-open
-// (ARTE / Netflix documentary style): the "Une même colline…" title sequence
-// resolves cinematically, then the story begins immediately below. No logo.
+// The opening title sequence, now serving as the hero itself: a full-bleed,
+// full-viewport cinematic band (ARTE / Netflix style). The 16:9 composition is
+// scaled to COVER the whole band; a scroll cue invites the reader downward.
 export default function FilmIntro() {
   const t = useTranslations('hero');
   const en = useLocale() === 'en';
 
-  const beats: [string, string][] = [
-    [t('stat1v'), t('stat1l')],
-    [t('stat2v'), t('stat2l')],
-    [t('stat3v'), t('stat3l')],
-  ];
-
   return (
-    <div
+    <header
       className="film-intro"
       role="img"
       aria-label={`${t('title')} ${t('titleEm')}`}
@@ -35,7 +29,16 @@ export default function FilmIntro() {
           fps={30}
           compositionWidth={1920}
           compositionHeight={1080}
-          style={{ width: '100%', height: '100%' }}
+          // Cover the full viewport band without distortion (the 16:9 box is
+          // grown to the larger of width/height and centred; overflow clipped).
+          style={{
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: 'max(100vw, 177.78svh)',
+            height: 'max(100svh, 56.25vw)',
+          }}
           autoPlay
           loop
           controls={false}
@@ -45,11 +48,14 @@ export default function FilmIntro() {
           inputProps={{
             line1: t('title'),
             line2: t('titleEm'),
-            lede: t('lede'),
-            beats,
+            tagline: t('introTagline'),
           }}
         />
       </div>
-    </div>
+      <div className="film-scroll" aria-hidden="true">
+        <span>{en ? 'Scroll' : 'Défiler'}</span>
+        <span className="line" />
+      </div>
+    </header>
   );
 }

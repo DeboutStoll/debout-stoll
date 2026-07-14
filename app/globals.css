@@ -640,9 +640,19 @@ img,video,iframe{max-width:100%}
    FILM INTRO — embedded Remotion Player (opening titles)
    ===================================================================== */
 /* Seamless full-bleed cold-open (no player chrome). */
+/* The intro IS the hero: a full-bleed, full-viewport cinematic band. */
 .film-intro{position:relative;background:#000;border-bottom:1px solid var(--line)}
-.film-intro-inner{position:relative;width:100%;margin:0 auto;aspect-ratio:16/9;
-  max-height:92vh;background:#000;overflow:hidden}
+.film-intro-inner{position:relative;width:100%;height:100vh;height:100svh;
+  background:#000;overflow:hidden}
+/* vertical scroll cue at the foot of the band */
+.film-scroll{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:4;
+  display:flex;flex-direction:column;align-items:center;gap:9px;pointer-events:none;
+  font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--bone-dim);
+  opacity:0;animation:fadeUp 1s 2s ease forwards}
+.film-scroll .line{position:relative;width:1px;height:38px;background:var(--line-strong);overflow:hidden}
+.film-scroll .line::after{content:"";position:absolute;inset:0;height:45%;background:var(--gold);
+  animation:cueDrop 2s 2.4s ease-in-out infinite}
+@keyframes cueDrop{0%{transform:translateY(-120%)}60%,100%{transform:translateY(320%)}}
 .film-intro-inner :is(.remotion-player, div){outline:none}
 .film-intro-loading{position:absolute;inset:0;
   background:radial-gradient(900px 620px at 50% 45%, rgba(176,85,47,.18), transparent 60%), #050403}
