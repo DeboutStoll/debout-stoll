@@ -16,6 +16,14 @@ export default function FilmIntro() {
   const t = useTranslations('hero');
   const en = useLocale() === 'en';
 
+  // Four historical moments retraced by the background slideshow.
+  const slides = [
+    { img: '/img/chantier-1923.jpg', year: '1923', label: en ? 'The construction' : 'Le chantier' },
+    { img: '/img/facade-1937.jpg', year: '1937', label: en ? 'The façade' : 'La façade' },
+    { img: '/img/inauguration-1969.jpg', year: '1969', label: en ? 'The inauguration' : "L'inauguration" },
+    { img: '/img/14-hectares.jpg', year: en ? 'Today' : "Aujourd'hui", label: en ? '14 hectares' : '14 hectares' },
+  ];
+
   return (
     <header
       className="film-intro"
@@ -49,11 +57,7 @@ export default function FilmIntro() {
             line1: t('title'),
             line2: t('titleEm'),
             lede: t('lede'),
-            beats: [
-              [t('stat1v'), t('stat1l')],
-              [t('stat2v'), t('stat2l')],
-              [t('stat3v'), ''],
-            ] as [string, string][],
+            slides,
           }}
         />
       </div>
