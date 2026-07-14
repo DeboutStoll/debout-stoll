@@ -68,10 +68,6 @@ header.hero{position:relative;padding:110px 0 84px;border-bottom:1px solid var(-
 .hero h1{font-size:clamp(2.5rem,6vw,4.6rem);color:var(--bone);margin:.15em 0 .35em;text-wrap:balance}
 .hero h1 em{font-style:italic;color:var(--gold-soft)}
 .hero .lede{font-size:clamp(1.05rem,1.8vw,1.35rem);color:var(--bone-dim);max-width:60ch;font-style:italic}
-/* Hero "Rejoindre l'appel" call to action (just below the top / logo) */
-.hero-cta{margin:32px 0 6px;display:flex}
-.hero-cta .jbtn-fb{font-size:1.05rem;padding:15px 30px}
-@media(max-width:520px){.hero-cta{width:100%}.hero-cta .jbtn-fb{width:100%;justify-content:center}}
 .hero-meta{margin-top:44px;display:flex;flex-wrap:wrap;gap:34px;padding-top:26px;border-top:1px solid var(--line)}
 .hero-meta div{min-width:112px}
 .hero-meta b{display:block;font-size:2rem;color:var(--laterite-2);font-weight:700;

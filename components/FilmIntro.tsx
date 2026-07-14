@@ -1,8 +1,8 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useLocale } from 'next-intl';
-import { AkonoTitle, AKONO_DURATION } from './remotion/AkonoTitle';
+import { useLocale, useTranslations } from 'next-intl';
+import { StollIntro, STOLL_INTRO_DURATION } from './remotion/StollIntro';
 
 const Player = dynamic(() => import('@remotion/player').then((m) => m.Player), {
   ssr: false,
@@ -10,18 +10,28 @@ const Player = dynamic(() => import('@remotion/player').then((m) => m.Player), {
 });
 
 // The documentary's opening titles — a seamless, controls-free cold-open
-// (ARTE / Netflix documentary style): autoplays, loops, no chrome, the story
-// begins immediately below.
+// (ARTE / Netflix documentary style): the "Une même colline…" title sequence
+// resolves cinematically, then the story begins immediately below. No logo.
 export default function FilmIntro() {
-  const locale = useLocale();
-  const en = locale === 'en';
+  const t = useTranslations('hero');
+  const en = useLocale() === 'en';
+
+  const beats: [string, string][] = [
+    [t('stat1v'), t('stat1l')],
+    [t('stat2v'), t('stat2l')],
+    [t('stat3v'), t('stat3l')],
+  ];
 
   return (
-    <div className="film-intro" role="img" aria-label={en ? 'Opening titles — AKONO' : "Générique d'ouverture — AKONO"}>
+    <div
+      className="film-intro"
+      role="img"
+      aria-label={`${t('title')} ${t('titleEm')}`}
+    >
       <div className="film-intro-inner">
         <Player
-          component={AkonoTitle}
-          durationInFrames={AKONO_DURATION}
+          component={StollIntro}
+          durationInFrames={STOLL_INTRO_DURATION}
           fps={30}
           compositionWidth={1920}
           compositionHeight={1080}
@@ -33,8 +43,10 @@ export default function FilmIntro() {
           doubleClickToFullscreen={false}
           initiallyMuted
           inputProps={{
-            presents: '',
-            tagline: en ? 'Seminary · Mission · College' : 'Séminaire · Mission · Collège',
+            line1: t('title'),
+            line2: t('titleEm'),
+            lede: t('lede'),
+            beats,
           }}
         />
       </div>

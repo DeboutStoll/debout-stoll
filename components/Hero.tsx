@@ -2,15 +2,13 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
-import { social } from '@/content/social';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-// Film-style intro (ARTE / Netflix documentary): eyebrow → title → lede →
-// "Rejoindre l'appel" call to action → stats. No crest here by design.
+// Readable hero beneath the cinematic intro: eyebrow → title → lede → stats.
+// No crest and no call to action here by design (the intro is pure title).
 export default function Hero() {
   const t = useTranslations('hero');
-  const nav = useTranslations('nav');
   const reduce = useReducedMotion();
   const scrollLabel = useLocale() === 'en' ? 'Scroll' : 'Défiler';
 
@@ -46,23 +44,9 @@ export default function Hero() {
           {t('lede')}
         </motion.p>
 
-        <motion.div className="hero-cta" {...rise(1.1)}>
-          <a
-            className="jbtn jbtn-fb"
-            href={social.facebookGroup}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="fb-glyph" aria-hidden="true">
-              f
-            </span>
-            {nav('rejoindre')}
-          </a>
-        </motion.div>
-
-        <motion.div className="hero-meta" {...rise(1.3)}>
+        <motion.div className="hero-meta" {...rise(1.15)}>
           {stats.map(([value, label], i) => (
-            <motion.div key={i} {...rise(1.4 + i * 0.12)}>
+            <motion.div key={i} {...rise(1.25 + i * 0.12)}>
               <b>{value}</b>
               <small>{label}</small>
             </motion.div>
