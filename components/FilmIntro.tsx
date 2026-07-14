@@ -42,8 +42,6 @@ export default function FilmIntro() {
         ))}
       </div>
       <div className="hf-grade" aria-hidden="true" />
-      <div className="hf-bar hf-bar-top" aria-hidden="true" />
-      <div className="hf-bar hf-bar-bottom" aria-hidden="true" />
 
       <div className="hf-content">
         <h1 className="hf-title">
