@@ -48,7 +48,12 @@ export default function FilmIntro() {
           inputProps={{
             line1: t('title'),
             line2: t('titleEm'),
-            tagline: t('introTagline'),
+            lede: t('lede'),
+            beats: [
+              [t('stat1v'), t('stat1l')],
+              [t('stat2v'), t('stat2l')],
+              [t('stat3v'), ''],
+            ] as [string, string][],
           }}
         />
       </div>

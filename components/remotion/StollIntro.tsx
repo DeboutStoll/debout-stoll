@@ -12,58 +12,57 @@ import { Embers, FilmGrain, Vignette } from './Layers';
 export type StollIntroProps = {
   line1: string; // "Une même colline,"
   line2: string; // "trois âges d'une œuvre"
-  tagline: string; // "Un patrimoine en péril"
+  lede: string;
+  beats: [string, string][]; // [value, label] (label may be empty)
   bgSrc?: string;
 };
 
-export const STOLL_INTRO_DURATION = 450; // 15s @ 30fps
+export const STOLL_INTRO_DURATION = 510; // 17s @ 30fps
 
 // The documentary cold-open, serving as the hero: a slow archival establishing
 // shot (Ken Burns) graded down to near-black, over which the title resolves
-// from heavy blur behind a cinematic letterbox — ARTE / Netflix style. Minimal
-// text: the title and a single tagline line.
+// from heavy blur, the rule draws, the lede settles and the three founding
+// beats land in sequence — inside a cinematic letterbox. ARTE / Netflix style.
 export const StollIntro: React.FC<StollIntroProps> = ({
   line1,
   line2,
-  tagline,
-  bgSrc = '/img/vue-aerienne.jpg',
+  lede,
+  beats,
+  bgSrc = '/img/chantier-1923.jpg',
 }) => {
   const frame = useCurrentFrame();
   const ease = Easing.bezier(0.16, 1, 0.3, 1);
   const clamp = { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' } as const;
 
-  // Letterbox bars close in, part at the end.
   const barH = 15;
   const barIn = interpolate(frame, [0, 26], [100, 0], { ...clamp, easing: ease });
-  const barOut = interpolate(frame, [422, 450], [0, 100], { ...clamp, easing: ease });
+  const barOut = interpolate(frame, [482, 510], [0, 100], { ...clamp, easing: ease });
   const barOffset = barIn + barOut;
 
   // Archival background — slow Ken Burns push + drift, fades up out of black.
-  const bgOpacity = interpolate(frame, [0, 80, 400, 445], [0, 0.5, 0.5, 0], clamp);
-  const bgScale = interpolate(frame, [0, 450], [1.14, 1.3], clamp);
-  const bgX = interpolate(frame, [0, 450], [-2, 2], clamp);
-  const bgY = interpolate(frame, [0, 450], [-1.5, 1.5], clamp);
+  const bgOpacity = interpolate(frame, [0, 80, 460, 505], [0, 0.5, 0.5, 0], clamp);
+  const bgScale = interpolate(frame, [0, 510], [1.14, 1.32], clamp);
+  const bgX = interpolate(frame, [0, 510], [-2, 2], clamp);
+  const bgY = interpolate(frame, [0, 510], [-1.5, 1.5], clamp);
 
   const glowOpacity = interpolate(frame, [0, 70], [0, 1], clamp);
-  const emberOpacity = interpolate(frame, [30, 90, 400, 440], [0, 0.7, 0.7, 0], clamp);
+  const emberOpacity = interpolate(frame, [30, 90, 455, 500], [0, 0.7, 0.7, 0], clamp);
 
-  const push = interpolate(frame, [0, 450], [1, 1.06], clamp);
-  const fadeOut = interpolate(frame, [426, 450], [1, 0], clamp);
+  const push = interpolate(frame, [0, 510], [1, 1.06], clamp);
+  const fadeOut = interpolate(frame, [486, 510], [1, 0], clamp);
 
-  // Title line 1 — resolves from heavy blur, letterspacing tightening.
-  const op1 = interpolate(frame, [40, 112], [0, 1], { ...clamp, easing: ease });
-  const blur1 = interpolate(frame, [40, 122], [24, 0], { ...clamp, easing: ease });
-  const ls1 = interpolate(frame, [40, 132], [28, 4], { ...clamp, easing: ease });
+  // Title.
+  const op1 = interpolate(frame, [40, 115], [0, 1], { ...clamp, easing: ease });
+  const blur1 = interpolate(frame, [40, 125], [24, 0], { ...clamp, easing: ease });
+  const ls1 = interpolate(frame, [40, 135], [28, 4], { ...clamp, easing: ease });
+  const op2 = interpolate(frame, [92, 160], [0, 1], { ...clamp, easing: ease });
+  const y2 = interpolate(frame, [92, 160], [28, 0], { ...clamp, easing: ease });
+  const blur2 = interpolate(frame, [92, 160], [14, 0], { ...clamp, easing: ease });
 
-  // Title line 2 (italic gold) — rises and sharpens just after.
-  const op2 = interpolate(frame, [90, 156], [0, 1], { ...clamp, easing: ease });
-  const y2 = interpolate(frame, [90, 156], [28, 0], { ...clamp, easing: ease });
-  const blur2 = interpolate(frame, [90, 156], [14, 0], { ...clamp, easing: ease });
-
-  // Rule + tagline.
-  const ruleW = interpolate(frame, [156, 216], [0, 620], { ...clamp, easing: ease });
-  const opT = interpolate(frame, [200, 262], [0, 1], { ...clamp, easing: ease });
-  const yT = interpolate(frame, [200, 262], [16, 0], { ...clamp, easing: ease });
+  // Rule + lede.
+  const ruleW = interpolate(frame, [160, 224], [0, 660], { ...clamp, easing: ease });
+  const opL = interpolate(frame, [200, 272], [0, 1], { ...clamp, easing: ease });
+  const yL = interpolate(frame, [200, 272], [18, 0], { ...clamp, easing: ease });
 
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.paper, fontFamily: SERIF }}>
@@ -76,7 +75,7 @@ export const StollIntro: React.FC<StollIntroProps> = ({
             height: '100%',
             objectFit: 'cover',
             transform: `scale(${bgScale}) translate(${bgX}%, ${bgY}%)`,
-            filter: 'grayscale(0.35) contrast(1.05) brightness(0.82)',
+            filter: 'grayscale(0.4) contrast(1.06) brightness(0.8)',
           }}
         />
       </AbsoluteFill>
@@ -85,7 +84,7 @@ export const StollIntro: React.FC<StollIntroProps> = ({
       <AbsoluteFill
         style={{
           background:
-            'linear-gradient(180deg, rgba(5,4,3,.86) 0%, rgba(5,4,3,.5) 42%, rgba(5,4,3,.5) 58%, rgba(5,4,3,.9) 100%)',
+            'linear-gradient(180deg, rgba(5,4,3,.88) 0%, rgba(5,4,3,.54) 40%, rgba(5,4,3,.6) 62%, rgba(5,4,3,.92) 100%)',
         }}
       />
       <AbsoluteFill
@@ -113,11 +112,11 @@ export const StollIntro: React.FC<StollIntroProps> = ({
               opacity: op1,
               filter: `blur(${blur1}px)`,
               color: COLORS.bone,
-              fontSize: 100,
+              fontSize: 98,
               fontWeight: 700,
               lineHeight: 1.05,
               letterSpacing: ls1,
-              textShadow: '0 6px 30px rgba(0,0,0,.7)',
+              textShadow: '0 6px 30px rgba(0,0,0,.72)',
             }}
           >
             {line1}
@@ -129,7 +128,7 @@ export const StollIntro: React.FC<StollIntroProps> = ({
               transform: `translateY(${y2}px)`,
               color: COLORS.goldSoft,
               fontStyle: 'italic',
-              fontSize: 82,
+              fontSize: 80,
               fontWeight: 700,
               lineHeight: 1.08,
               marginTop: 6,
@@ -143,25 +142,69 @@ export const StollIntro: React.FC<StollIntroProps> = ({
             style={{
               height: 2,
               width: ruleW,
-              marginTop: 40,
+              marginTop: 36,
               background: `linear-gradient(90deg, transparent, ${COLORS.gold}, transparent)`,
             }}
           />
 
           <div
             style={{
-              opacity: opT,
-              transform: `translateY(${yT}px)`,
-              color: COLORS.goldSoft,
-              fontSize: 27,
-              fontWeight: 600,
-              letterSpacing: 10,
-              textTransform: 'uppercase',
-              marginTop: 30,
-              textShadow: '0 2px 18px rgba(0,0,0,.7)',
+              opacity: opL,
+              transform: `translateY(${yL}px)`,
+              color: COLORS.bone,
+              fontStyle: 'italic',
+              fontSize: 31,
+              lineHeight: 1.5,
+              maxWidth: 1160,
+              marginTop: 28,
+              textShadow: '0 2px 16px rgba(0,0,0,.72)',
             }}
           >
-            {tagline}
+            {lede}
+          </div>
+
+          <div style={{ display: 'flex', gap: 60, marginTop: 46, alignItems: 'flex-start' }}>
+            {beats.map(([value, label], i) => {
+              const start = 300 + i * 26;
+              const opB = interpolate(frame, [start, start + 48], [0, 1], {
+                ...clamp,
+                easing: ease,
+              });
+              const yB = interpolate(frame, [start, start + 48], [22, 0], {
+                ...clamp,
+                easing: ease,
+              });
+              return (
+                <div
+                  key={i}
+                  style={{
+                    opacity: opB,
+                    transform: `translateY(${yB}px)`,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    minWidth: 132,
+                  }}
+                >
+                  <span style={{ color: COLORS.gold, fontSize: 56, fontWeight: 800, lineHeight: 1 }}>
+                    {value}
+                  </span>
+                  {label ? (
+                    <span
+                      style={{
+                        color: COLORS.boneDim,
+                        fontSize: 19,
+                        letterSpacing: 3,
+                        textTransform: 'uppercase',
+                        marginTop: 10,
+                      }}
+                    >
+                      {label}
+                    </span>
+                  ) : null}
+                </div>
+              );
+            })}
           </div>
         </AbsoluteFill>
       </AbsoluteFill>
